@@ -20,6 +20,10 @@ $(document).ready(function(){
     $('.labels').append("<p class = \"stationlabels\">" +labelArray[i] + "</p>");
 	}
 	
+	//$('.tuner').click(function() {
+  	//	$( ".tuner" ).toggle( "scale" );
+	//});
+	
 });
 
 
