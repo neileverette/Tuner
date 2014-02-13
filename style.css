@@ -8,11 +8,8 @@
 
 body,html{
   height: 100%;
+  margin:0px;
 }
-
-body{
-	margin: 0;
-	}
 	
 .overlay{
 	height: 100%;
@@ -20,9 +17,6 @@ body{
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,1)));
 	display:inline-block;
 	position:absolute;
-	background-repeat: no-repeat;
-	background-size:contain;
-	background-attachment: fixed;
 }
 
 
@@ -50,9 +44,11 @@ body{
 }
 
 .stationInfo{
+	/*border:1px red solid;*/
+	
 	position:absolute;
-	width:600px;
-	height:150px;
+	width:700px;
+	height:250px;
 	left:5%;
 	font-size:30px;
 }
@@ -73,32 +69,32 @@ body{
 
 /* This is the container area for the ridges */
 .tuner{
-	/*border:1px solid white; */
 	position: absolute;
-	left:5%;
-	margin-top:150px;
-	width: 70%;
+	border:1px solid green;
+	margin-top:10px;
+	height: 100px;
+	
+	/*width: 100%;
 	height: 43px;
 	overflow:hidden;
-	display:block;
+	display:block;*/
 }
 
 .rainbow{
 	position: absolute;
-	margin-top:200px;
+	/*margin-top:5px;
 	margin-left:5%;
 	margin-right:2px;
-	width: 70%;
+	width: 100%;*/
+	
+	margin-top:0px;
 	height:5px;
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,50,50,1)), 							color-stop(14%,rgba(242,252,50,1)), color-stop(28%,rgba(61,255,50,1)), color-stop(43%,rgba(49,249,243,1)), color-stop(61%,rgba(49,53,249,1)), color-stop(83%,rgba(252,50,252,1)), color-stop(100%,rgba(252,0,4,1))); 
+	background:-webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,50,50,1)),color-stop(14%,rgba(242,252,50,1)), color-stop(28%,rgba(61,255,50,1)), color-stop(43%,rgba(49,249,243,1)), color-stop(61%,rgba(49,53,249,1)), color-stop(83%,rgba(252,50,252,1)), color-stop(100%,rgba(252,0,4,1))); 
 }
 
 .labels{
-	/*border:1px white solid;*/
-	position: absolute;
-	margin-top:220px;
-	left:5%;
-	width: 70%;
+	margin-top:20px;
+	width: 100%;
 	height: 11px;
 	overflow:hidden;
 }
@@ -136,7 +132,7 @@ body{
 
 /* Invisible hit region for the playhead*/
 .playhead{
-	border: 1px white solid;
+	/*border: 1px white solid;*/
 	position:absolute;
 	display:inline-block;
 	width:40px;
