@@ -1,5 +1,6 @@
 *{
 	/*border: 1px red solid;*/
+	letter-spacing: .1em;
 }
 
 body,html{
@@ -131,15 +132,19 @@ body,html{
 .stationName{
 	font-size:30px;
 	letter-spacing: .05em;
+	text-transform: capitalize;
 }
 
 .songName{
+	letter-spacing: 0em;
 	font-size:50px;
+	text-transform: capitalize;
 }
 
 .artistName{
-	font-size:20px;
+	font-size: 20px;
 	letter-spacing: .05em;
+	text-transform: capitalize;
 }
 
 .labels{
@@ -152,6 +157,31 @@ body,html{
 	margin-left: 70px;
 	line-height: 50px;
 	font-size: 25px;
+}
+
+.buttonContainer,.button{
+	height: 50px;
+}
+
+.buttonContainer{
+	opacity: .5;
+	position: absolute;
+	top:60%;
+	left: 300px;
+	width: 400px;
+}
+
+.button{
+	display:inline-block;
+	float:left;
+	margin-right:30px;
+	width: 50px;
+	border-radius: 50px;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.buttonImage{
+	height:70%;
 }
 
 p{
@@ -167,4 +197,11 @@ p{
 	font-size: 10px;
 	letter-spacing: .1em;
 	text-transform: uppercase;
+}
+
+#pause{
+	background-image: url(pause.png);
+	background-position: center center;
+	background-size:60%;
+	background-repeat:no-repeat;
 }
