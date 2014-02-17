@@ -2,41 +2,36 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Tuner Background Test</title>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-<script type='text/javascript' src='script.js'></script>
-<link href='http://fonts.googleapis.com/css?family=Roboto:100|Roboto:300|Roboto+Slab:100' rel='stylesheet' type='text/css'>
 
-<!--JQuery Style experiment-->
-<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-
-
-<link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>	
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<script src="script.js"></script>
+    
+<title>Sliding Menu</title>
 </head>
 
 <body>
 
 
-
-<div class="overlay"></div>
-<div class="container"></div>
-	<div class="hiddenpanel"></div>
-    <div class="stationInfo">
-        <div class ="stationID"><p class>01 Today's Hits</div>
-        <div class ="songName">When I was your man</div>
-        <div class ="artistName">Bruno Mars</div>
-        <div class="tuner">
-            <div class="ridges"></div>
-            <div class="playhead"><div class="playheadgraphic"></div></div>
-            <div class="rainbow"></div>
-            <div class="labels"></div>
-        </div>
+	<div class="fullscreen">
+    	<div class="background"></div> 
+ 		<div class="overlay"></div>
+    	<div class="menu-hover"><div class="side-menu"></div>
+  	</div>
+    
+	<div class="stationInfo">
+    	<p class="stationName">Station ID</p>
+        <p class="songName">Song Name</p>
+        <p class="artistName">Artist Name</p> 
+        
+        <div class="tuner"></div>
+        <div class="playhead"><div class="playheadgraphic"></div></div>
+       
+        <div class="rainbow"></div>
+        <div class="labels"></div>
     </div>
-	
-<div>
-
-
+    
+     
 </body>
 </html>

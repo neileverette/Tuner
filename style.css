@@ -1,108 +1,83 @@
-@charset "UTF-8";
-/* CSS Document */
 *{
-	margin:0px;
-	padding:0px;
-	/*border:1px white solid;*/
+	/*border: 1px red solid;*/
 }
 
 body,html{
   height: 100%;
   margin:0px;
 }
-	
+
 .overlay{
+	position:absolute;
+	left:0;
+	top:0;
 	height: 100%;
 	width:100%;
+	background-size:cover;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,1)));
-	display:inline-block;
+}
+
+.background{
 	position:absolute;
-}
-
-/* Outer for the whole page*/
-.container{
-	/*border: 1px black solid;*/
-	width: 100%;
+	left:0;
+	top:0;
 	height: 100%;
-	background-image: url(images/image.jpg);
-	background-repeat: no-repeat;
-	background-size: 100%;
-	opacity: 1;
+	width:100%;
 	background-attachment: fixed;
+	background-image: url(image.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size:cover;
+	filter: blur(10px);
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
 }
 
-.stationInfo,.songName,.artistName{
-	border:1px red solid;
-	font-family: "Helvetica Neue", Roboto;
-	font-weight: 100;
-	color: #FFF;
+.side-menu {
+	padding-top:100px;
+	position:relative;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.9)));
+    color: #fff;
+    display: block;
+    width: 300px;
+    left: 300px;
+    height: 100%;
 }
 
-.stationInfo,.tuner,.labels,.rainbow{
-	/*top:55%;*/
+.menu-hover{
+	position:relative;
+	float:right;
+	display: block;
+	overflow: hidden;
+	width: 300px;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+
+.fullscreen{
+	width:100%;
+	height:100%;
 }
 
 /* Container for the station info and slider graphic*/
 .stationInfo{
-	top:55%;
+	top:60%;
 	display:block;
 	position:absolute;
-	width:1000px;
+	width:900px;
 	height:250px;
 	left:5%;
 }
 
-.songName{
-	font-size:50px;
-}
-
-.artistName{
-	font-size:20px;
-	letter-spacing: .05em;
-}
-
-.stationID{
-	letter-spacing: .05em;
-}
-
-/* This is the container area for the ridges */
+/* Container for the tuner area*/
 .tuner{
-	display:block;
-	position: absolute;
-	margin-top:20px;
-	overflow:hidden;
-	border:1px green solid;
-	/*width: 100%;
-	height: 43px;
-	display:block;*/
-}
-
-.rainbow{
-	/*position: absolute;
-	margin-top:5px;
-	margin-left:5%;
-	margin-right:2px;
-	width: 100%;*/
-	margin-top:0px;
-	height:5px;
-	background:-webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,50,50,1)),color-stop(14%,rgba(242,252,50,1)), color-stop(28%,rgba(61,255,50,1)), color-stop(43%,rgba(49,249,243,1)), color-stop(61%,rgba(49,53,249,1)), color-stop(83%,rgba(252,50,252,1)), color-stop(100%,rgba(252,0,4,1))); 
-}
-
-.labels{
 	margin-top:10px;
-	width: 100%;
-	height: 11px;
+	width:100%;
+	height:45px;
 	overflow:hidden;
-}
-
-/* Container element for the ridge area*/
-.ridges{
-	/*border: 1px solid white;*/
-	height: 40px;
-	position: absolute;
-	width: 100%;
-	overflow:hidden;
-	opacity:.5;
 }
 
 /* Invisible region for a ridge*/
@@ -110,10 +85,9 @@ body,html{
 	/*border: 1px solid white;*/
 	width: 4px;
 	float:left;
-	margin:0px;
 	padding:0px;
 	display:inline-block;
-	height: 40px;
+	height: 100%;
 }
 
 /* 2 pixel graphic that sits inside the ridge hit area*/
@@ -128,9 +102,8 @@ body,html{
 
 /* Invisible hit region for the playhead*/
 .playhead{
-	/*border: 1px white solid;*/
 	position:absolute;
-	display:inline-block;
+	top:125px;
 	width:40px;
 	height:43px;
 	left:100px;
@@ -138,30 +111,60 @@ body,html{
 
 /* Graphic for the playhead*/
 .playheadgraphic{
-	height:43px;
+	height:44px;
 	width:4px;
 	margin-left:18px;
 	background-color:#F00;
 }
 
-.stationlabels{
+.rainbow{
+	height:5px;
+	background:-webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,50,50,1)),color-stop(14%,rgba(242,252,50,1)), color-stop(28%,rgba(61,255,50,1)), color-stop(43%,rgba(49,249,243,1)), color-stop(61%,rgba(49,53,249,1)), color-stop(83%,rgba(252,50,252,1)), color-stop(100%,rgba(252,0,4,1))); 
+}
+
+.stationInfo,.songName,.artistName,.menutext,.firstMenuText,.stationlabels{
 	font-family: "Helvetica Neue", Roboto;
 	font-weight: 100;
 	color: #FFF;
-	font-size: 10px;
-	float: left;
-	text-align: center;
-	width: 100px;
-	letter-spacing: .1em;
-	text-transform: uppercase;
 }
 
-.hiddenpanel{
-	border: 1px green solid;
-	position:absolute;
+.stationName{
+	font-size:30px;
+	letter-spacing: .05em;
+}
+
+.songName{
+	font-size:50px;
+}
+
+.artistName{
+	font-size:20px;
+	letter-spacing: .05em;
+}
+
+.labels{
+	margin-top:10px;
+	width: 100%;
+	height: 11px;
+}
+
+.menutext{
+	margin-left: 70px;
+	line-height: 50px;
+	font-size: 25px;
+}
+
+p{
+	margin:0;
+	left: 0px;
+	color: #FFF;
+}
+
+.stationlabels{
 	display:inline-block;
-	float:right;
-	top:0;
-	width:300px;
-	height:100%;
+	float:left;
+	padding-right:27px;
+	font-size: 10px;
+	letter-spacing: .1em;
+	text-transform: uppercase;
 }
