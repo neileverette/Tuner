@@ -25,7 +25,7 @@ body,html{
 	height: 100%;
 	width:100%;
 	background-attachment: fixed;
-	background-image: url(image.jpg);
+	background-image: url(image1.jpg);
 	background-repeat: no-repeat;
 	background-position: left top;
 	background-size:cover;
@@ -63,9 +63,12 @@ body,html{
 	height:100%;
 }
 
+.stationInfo,.buttonContainer{
+	top:55%;
+}
+
 /* Container for the station info and slider graphic*/
 .stationInfo{
-	top:60%;
 	display:block;
 	position:absolute;
 	width:900px;
@@ -154,6 +157,7 @@ body,html{
 }
 
 .menutext{
+	letter-spacing: .02em;
 	margin-left: 70px;
 	line-height: 50px;
 	font-size: 25px;
@@ -165,23 +169,21 @@ body,html{
 
 .buttonContainer{
 	opacity: .5;
+	margin-top:20px;
 	position: absolute;
-	top:60%;
-	left: 300px;
+	left:630px;
 	width: 400px;
 }
 
 .button{
 	display:inline-block;
 	float:left;
-	margin-right:30px;
-	width: 50px;
+	margin-right:10px;
+	width: 60px;
+	height:60px;
 	border-radius: 50px;
-	background-color: rgba(0,0,0,0.5);
-}
-
-.buttonImage{
-	height:70%;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	background-color: rgba(0,0,0,0.7);
 }
 
 p{
@@ -202,6 +204,13 @@ p{
 #pause{
 	background-image: url(pause.png);
 	background-position: center center;
-	background-size:60%;
+	background-size:50%;
+	background-repeat:no-repeat;
+}
+
+#skip{
+	background-image: url(skip.png);
+	background-position: center center;
+	background-size:40%;
 	background-repeat:no-repeat;
 }
