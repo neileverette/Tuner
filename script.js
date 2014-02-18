@@ -1,5 +1,7 @@
 
 $(document).ready(function(){
+	var x = $("#ridge1").offset().left;
+	alert(x);
 	
 // Allows the playhead to be draggable
 	$(function() {

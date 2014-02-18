@@ -25,7 +25,7 @@ body,html{
 	height: 100%;
 	width:100%;
 	background-attachment: fixed;
-	background-image: url(image1.jpg);
+	background-image: url(images/image1.jpg);
 	background-repeat: no-repeat;
 	background-position: left top;
 	background-size:cover;
@@ -167,8 +167,23 @@ body,html{
 	height: 50px;
 }
 
+p{
+	margin:0;
+	left: 0px;
+	color: #FFF;
+}
+
+.stationlabels{
+	display:inline-block;
+	float:left;
+	padding-right:27px;
+	font-size: 10px;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+}
+
 .buttonContainer{
-	opacity: .5;
+	opacity: .7;
 	margin-top:20px;
 	position: absolute;
 	left:630px;
@@ -186,30 +201,29 @@ body,html{
 	background-color: rgba(0,0,0,0.7);
 }
 
-p{
-	margin:0;
-	left: 0px;
-	color: #FFF;
-}
-
-.stationlabels{
-	display:inline-block;
-	float:left;
-	padding-right:27px;
-	font-size: 10px;
-	letter-spacing: .1em;
-	text-transform: uppercase;
-}
-
 #pause{
-	background-image: url(pause.png);
+	background-image: url(images/pause.png);
 	background-position: center center;
 	background-size:50%;
 	background-repeat:no-repeat;
 }
 
 #skip{
-	background-image: url(skip.png);
+	background-image: url(images/skip.png);
+	background-position: center center;
+	background-size:40%;
+	background-repeat:no-repeat;
+}
+
+#like{
+	background-image: url(images/like.png);
+	background-position: center center;
+	background-size:40%;
+	background-repeat:no-repeat;
+}
+
+#dislike{
+	background-image: url(images/dislike.png);
 	background-position: center center;
 	background-size:40%;
 	background-repeat:no-repeat;
