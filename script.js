@@ -65,7 +65,13 @@ $(document).ready(function(){
 	$(function() {
     	$('.playhead').draggable({ axis: "x" });
   	});	
+
+//// Album Titles
+	var titleArray = [ "Rocky Horror Picture ", "Girl on Fire", "Must Be Nice", "People of the World","Holding Sky","When You Were Mine","Goblin", "Chromeo", "A Real Live One", "One in a Million", "Obsession", "Flowers in Your Haiur"];
 	
+//// Artist Titles
+	var artistArray = [ "Various Artists ", "Alicia Keys", "Plndr", "Burning Spear","Throne and Lion", "Bruno Mars","Tyler the Creator","Amerigo Gazaway", "Iron Maiden", "Aaliyah", "Shane Ward", "The Lumineers"];
+		
 
 // Allows the background to be swaped depending on the playhead
 	$('.playhead').draggable(
@@ -98,73 +104,17 @@ $(document).ready(function(){
 			// Writes the X coordinate of the needle to the screen
            // $('#posX').text('x: ' + xPos);
 			
-			var increments = tunerWidth/5;
+			var increments = tunerWidth/10;
 			
 			for (var i=0; i<increments; i++){
 				
-				var position = i*5 + tunerStart;
+				var position = i*10 + tunerStart;
 			
-			// Changes the background image depending on the playhead position
-				if (xPos == 44){
-					$('.background').css("background-image", "url(images/image0.jpg)");
-				}else if(xPos == 54){
-					$('.background').css("background-image", "url(images/image1.jpg)");
-				}else if(xPos == 64){
-					$('.background').css("background-image", "url(images/image2.jpg)");
-				}else if(xPos == 74){
-					$('.background').css("background-image", "url(images/image3.jpg)");
-				}else if(xPos == 84){
-					$('.background').css("background-image", "url(images/image4.jpg)");
-				}else if(xPos == 94){
-					$('.background').css("background-image", "url(images/image5.jpg)");
-				}else if(xPos == 104){
-					$('.background').css("background-image", "url(images/image6.jpg)");
-				}else if(xPos == 114){
-					$('.background').css("background-image", "url(images/image7.jpg)");
-				}else if(xPos == 124){
-					$('.background').css("background-image", "url(images/image8.jpg)");	
-				}else if(xPos == 134){
-					$('.background').css("background-image", "url(images/image9.jpg)");
-				}else if(xPos == 144){
-					$('.background').css("background-image", "url(images/image10.jpg)");
-				}else if(xPos == 154){
-					$('.background').css("background-image", "url(images/image11.jpg)");
-				}else if(xPos == 164){
-					$('.background').css("background-image", "url(images/image12.jpg)");
-				}else if(xPos == 174){
-					$('.background').css("background-image", "url(images/image13.jpg)");
-				}else if(xPos == 184){
-					$('.background').css("background-image", "url(images/image14.jpg)");
-				}else if(xPos == 194){
-					$('.background').css("background-image", "url(images/image15.jpg)");
-				}else if(xPos == 204){
-					$('.background').css("background-image", "url(images/image16.jpg)");
-				}else if(xPos == 214){
-					$('.background').css("background-image", "url(images/image17.jpg)");	
-				}else if(xPos == 224){
-					$('.background').css("background-image", "url(images/image18.jpg)");
-				}else if(xPos == 234){
-					$('.background').css("background-image", "url(images/image19.jpg)");
-				}else if(xPos == 244){
-					$('.background').css("background-image", "url(images/image20.jpg)");
-				}else if(xPos == 254){
-					$('.background').css("background-image", "url(images/image21.jpg)");
-				}else if(xPos == 264){
-					$('.background').css("background-image", "url(images/image22.jpg)");
-				}else if(xPos == 274){
-					$('.background').css("background-image", "url(images/image23.jpg)");
-				}else if(xPos == 284){
-					$('.background').css("background-image", "url(images/image24.jpg)");
-				}else if(xPos == 294){
-					$('.background').css("background-image", "url(images/image25.jpg)");
-				}else if(xPos == 304){
-					$('.background').css("background-image", "url(images/image26.jpg)");
-				}else if(xPos == 314){
-					$('.background').css("background-image", "url(images/image27.jpg)");
-				}else if(xPos == 324){
-					$('.background').css("background-image", "url(images/image28.jpg)");
-				}else if(xPos == 334){
-					$('.background').css("background-image", "url(images/image29.jpg)");
+				// Changes the background image depending on the playhead position
+				if (xPos == position){
+					$('.background').css("background-image", "url(images/image"+i+".jpg)");
+					$('.songName').text(titleArray[i]);
+					$('.artistName').text(artistArray[i]);
 				}
 			}
         }
@@ -183,7 +133,8 @@ $(document).ready(function(e) {
 	   // Moves the playhead over to the click spot
 	   // First we capture the X value of the mouse, then subtract the margin of the tuner div, then subtract half of the playhead hit area
 	   var playHeadWidth = $('.playhead')/2;
-	   $(".playhead").css({left:e.pageX-($( window ).width()*.05)-playheadWidth});
+	   $(".playhead").css(
+	   		{left:e.pageX-($( window ).width()*.05)-playheadWidth});
     }); 
  });	
  

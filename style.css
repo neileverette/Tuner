@@ -70,6 +70,13 @@ body,html{
 	height:100%;
 }
 
+.title{
+	display:block;
+	position:absolute;
+	top:30px;
+	left:5%;
+}
+
 .stationInfo,.buttonContainer{
 	top:55%;
 }
@@ -133,10 +140,19 @@ body,html{
 	background:-webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,50,50,1)),color-stop(14%,rgba(242,252,50,1)), color-stop(28%,rgba(61,255,50,1)), color-stop(43%,rgba(49,249,243,1)), color-stop(61%,rgba(49,53,249,1)), color-stop(83%,rgba(252,50,252,1)), color-stop(100%,rgba(252,0,4,1))); 
 }
 
-.stationInfo,.songName,.artistName,.menutext,.firstMenuText,.stationlabels{
+.stationInfo,.songName,.artistName,.menutext,.firstMenuText,.stationlabels,.siteTitle{
 	font-family: "Helvetica Neue", Roboto;
 	font-weight: 100;
 	color: #FFF;
+}
+
+.siteTitle{
+	font-size: 15px;
+	color:rgba(255, 255, 255, 0.5);
+	background-color: rgba(0,0,0,0.3);
+	line-height: 40px;
+	width: 300px;
+	text-indent: 40px;
 }
 
 .stationName{
