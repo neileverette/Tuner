@@ -8,6 +8,16 @@ body,html{
   margin:0px;
 }
 
+/* STYLING FOR THE DRAG OBJECT*/
+#dragThis {
+    width: 6em;
+    height: 6em;
+    padding: 0.5em;
+    border: 3px solid #ccc;
+    border-radius: 0 1em 1em 1em;
+	z-index:!important;
+}
+
 .overlay{
 	position:absolute;
 	left:0;
@@ -101,7 +111,7 @@ body,html{
 	height:40px;
 	background-color:#FFF;
 	color:#FFF;
-	opacity:.4;
+	opacity:.3;
 }
 
 /* Invisible hit region for the playhead*/

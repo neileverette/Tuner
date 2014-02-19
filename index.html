@@ -8,18 +8,19 @@
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 	<script src="script.js"></script>
     
-<title>Sliding Menu</title>
+<title>Slider Experiment</title>
 </head>
 
 <body>
 
-
+	<!--FULL SCREEN DIV TO SET BACKGROUND AND SIDE MENU-->
 	<div class="fullscreen">
     	<div class="background"></div> 
  		<div class="overlay"></div>
     	<div class="menu-hover"><div class="side-menu"></div>
   	</div>
     
+    <!--SET THE STATION AREA WITH ARTIST NAME AND TUNER GRAPHIC-->
 	<div class="stationInfo">
     	<p class="stationName">12 Today's New Artists</p>
         <p class="songName">when i was your man</p>
@@ -29,9 +30,10 @@
         <div class="playhead"><div class="playheadgraphic"></div></div>
        
         <div class="rainbow"></div>
-        <div class="labels"></div>
-            
+        <div class="labels"></div>      
     </div>
+    
+    <!--BUTTONS FOR THE PAGE-->
     <div class="buttonContainer">
     	<div class="button" id="pause"></div>
         <div class="button" id="skip"></div>
@@ -39,6 +41,13 @@
         <div class="button" id="dislike"></div>
     </div>
     
+    <!--DRAG LABEL THAT DISPLAYS XY COORDINATES-->
+    <div id="dragThis">
+        <ul>
+            <li id="posX"></li>
+            <li id="posY"></li>
+        </ul>
+    </div> 
      
 </body>
 </html>
