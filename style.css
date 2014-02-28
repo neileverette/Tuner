@@ -22,7 +22,13 @@ body,html{
 	height: 100%;
 	width:100%;
 	background-size:cover;
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,1)));
+	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 }
 
 .background{
@@ -46,8 +52,13 @@ body,html{
 .side-menu {
 	padding-top:100px;
 	position:relative;
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.9)));
-    color: #fff;
+	background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.9))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#e6000000',GradientType=1 ); /* IE6-9 */
     display: block;
     width: 300px;
     left: 300px;
@@ -90,13 +101,33 @@ body,html{
 	left:5%;
 }
 
-/* Container for the tuner area*/
+.blackBox{
+	top:53%;
+	background: rgba(0,0,0,0.3);
+	display:block;
+	position:absolute;
+	width:900px;
+	height:250px;
+	left:4%;
+}
+
+
+/* RAINBOW TUNER AREA*/
 .tuner{
-	margin-top:10px;
+	margin-top:20px;
+	background: rgb(255,50,50); /* Old browsers */
+	background: -moz-linear-gradient(left,  rgba(255,50,50,1) 0%, rgba(242,252,50,1) 14%, rgba(61,255,50,1) 28%, rgba(49,249,243,1) 43%, rgba(49,53,249,1) 61%, rgba(252,50,252,1) 83%, rgba(252,0,4,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,50,50,1)), color-stop(14%,rgba(242,252,50,1)), color-stop(28%,rgba(61,255,50,1)), color-stop(43%,rgba(49,249,243,1)), color-stop(61%,rgba(49,53,249,1)), color-stop(83%,rgba(252,50,252,1)), color-stop(100%,rgba(252,0,4,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(255,50,50,1) 0%,rgba(242,252,50,1) 14%,rgba(61,255,50,1) 28%,rgba(49,249,243,1) 43%,rgba(49,53,249,1) 61%,rgba(252,50,252,1) 83%,rgba(252,0,4,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(255,50,50,1) 0%,rgba(242,252,50,1) 14%,rgba(61,255,50,1) 28%,rgba(49,249,243,1) 43%,rgba(49,53,249,1) 61%,rgba(252,50,252,1) 83%,rgba(252,0,4,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(255,50,50,1) 0%,rgba(242,252,50,1) 14%,rgba(61,255,50,1) 28%,rgba(49,249,243,1) 43%,rgba(49,53,249,1) 61%,rgba(252,50,252,1) 83%,rgba(252,0,4,1) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(255,50,50,1) 0%,rgba(242,252,50,1) 14%,rgba(61,255,50,1) 28%,rgba(49,249,243,1) 43%,rgba(49,53,249,1) 61%,rgba(252,50,252,1) 83%,rgba(252,0,4,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3232', endColorstr='#fc0004',GradientType=1 ); /* IE6-9 */
 	width:100%;
-	height:45px;
+	height:25px;
 	overflow:hidden;
 }
+
 
 /* Invisible region for a ridge*/
 .ridge{
@@ -119,20 +150,29 @@ body,html{
 }
 
 /* Invisible hit region for the playhead*/
-.playhead{
+/*.playhead{
 	position:absolute;
 	top:125px;
 	width:40px;
 	height:43px;
 	left:100px;
+}*/
+
+
+.playhead{
+	position:absolute;
+	top:132px;
+	width:40px;
+	height:35px;
+	left:100px;
 }
 
 /* Graphic for the playhead*/
 .playheadgraphic{
-	height:44px;
+	height:35px;
 	width:4px;
 	margin-left:18px;
-	background-color:#F00;
+	background-color:#Fff; /*#F00*/
 }
 
 .rainbow{
@@ -145,6 +185,7 @@ body,html{
 	font-weight: 100;
 	color: #FFF;
 }
+
 
 .siteTitle{
 	font-size: 15px;
@@ -174,8 +215,8 @@ body,html{
 }
 
 .labels{
-	margin-top:10px;
-	width: 100%;
+	margin-top:17px;
+	width: 110%;
 	height: 11px;
 }
 
@@ -199,7 +240,7 @@ p{
 .stationlabels{
 	display:inline-block;
 	float:left;
-	padding-right:27px;
+	padding-right:32px;
 	font-size: 10px;
 	letter-spacing: .1em;
 	text-transform: uppercase;
