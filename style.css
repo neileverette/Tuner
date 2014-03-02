@@ -8,13 +8,6 @@ body,html{
   margin:0px;
 }
 
-/* STYLING FOR THE DRAG OBJECT*/
-#dragThis {
-    width: 6em;
-    height: 6em;
-	z-index:!important;
-}
-
 .overlay{
 	position:absolute;
 	left:0;
@@ -66,11 +59,12 @@ body,html{
 }
 
 .menu-hover{
+	border:1px red solid;
 	position:relative;
 	float:right;
 	display: block;
 	overflow: hidden;
-	width: 300px;
+	width: 100px;
 	height: 100%;
 	top: 0px;
 	left: 0px;
@@ -150,30 +144,31 @@ body,html{
 	opacity:.3;
 }
 
-/* Invisible hit region for the playhead*/
-/*.playhead{
-	position:absolute;
-	top:125px;
-	width:40px;
-	height:43px;
-	left:100px;
-}*/
-
+.playhead,.playheadgraphic{
+	height:34px;
+}
 
 .playhead{
 	position:absolute;
-	top:132px;
+	top:134px;
 	width:40px;
-	height:35px;
 	left:100px;
 }
 
 /* Graphic for the playhead*/
 .playheadgraphic{
-	height:35px;
 	width:4px;
 	margin-left:18px;
 	background-color:#Fff; /*#F00*/
+}
+
+.preset{
+	top:139px;
+	position:absolute;
+	width:2px;
+	height:25px;
+	left:100px;
+	background-color: #FFF;
 }
 
 .rainbow{
@@ -266,30 +261,30 @@ p{
 	background-color: rgba(0,0,0,0.7);
 }
 
+#pause,#skip,#like,#dislike,#add{
+	background-position: center center;
+	background-size:40%;
+	background-repeat:no-repeat;
+}
+
 #pause{
 	background-image: url(images/pause.png);
-	background-position: center center;
 	background-size:50%;
-	background-repeat:no-repeat;
 }
 
 #skip{
 	background-image: url(images/skip.png);
-	background-position: center center;
-	background-size:40%;
-	background-repeat:no-repeat;
 }
 
 #like{
 	background-image: url(images/like.png);
-	background-position: center center;
-	background-size:40%;
-	background-repeat:no-repeat;
 }
 
 #dislike{
 	background-image: url(images/dislike.png);
-	background-position: center center;
-	background-size:40%;
-	background-repeat:no-repeat;
+}
+
+#add{
+	background-image: url(images/add.png);
+	background-size:50%;
 }
