@@ -79,16 +79,16 @@ function dragPlayhead(){
 		
 		// VARIABLES FOR THE FUNCTION		
 		
-		// Playhead
+		// PLAYHEAD
 		var playhead = Math.floor($('.playhead').offset().left);
 		
-		// Get the width of the invisible hit area of the playhead
+		// HIT AREA OF THE PLAYHEAD
 		var playheadWidth = Math.round($('.playhead').width());
 				
-		// Determines the bounding box of the tuner from the left side of the window
+		// STARTING X COORDINATE OF THE TUNER REGION
 		var tunerStartPosition = Math.round($('.tuner').offset().left);
 				
-		// Gets the width of the neddle graphic
+		// WIDTH OF PLAYHEAD GRAHPIC
 		var needleGraphic = $('.playheadgraphic').width();
 				
 		// Calculates the staring point of the tuner grahic 
@@ -102,9 +102,10 @@ function dragPlayhead(){
 		
 		// DRAG FUNCTION ONLY ON THE X AXIS
 		$(function() {
-			// WHILE THE PLAYHEAD IS WITHEN BOUNDS OF THE TUNER BAR, ALLOW IT TO BE DRAGGED
+			// WHILE THE PLAYHEAD IS WITHIN BOUNDS OF THE TUNER BAR, ALLOW IT TO BE DRAGGED	
 				$('.playhead').draggable({ axis: "x" });
-			});	
+		});	
+			
 	
 		// SWAP BACKGROUND IMAGE AS THE PLAYHEAD MOVES
 			$('.playhead').draggable(
@@ -214,8 +215,6 @@ function moveNeedle(x){
 	var playhead = $('.playhead');
 	
 	// ANIMATE THE PLAYHEAD TO THE PASSED PARAMETER X
-	//playhead.animate({ left: x},700, 'easeInOutQuart');
-	//playhead.animate({ left: x},700, 'easeOutExpo');
 	playhead.animate({ left: x},700, 'easeInOutCubic');
 }
 
