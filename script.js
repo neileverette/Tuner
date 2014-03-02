@@ -10,6 +10,8 @@ $(document).ready(function(e){
 		var artistArray = [ "Various Artists ", "Alicia Keys", "Plndr", "Burning Spear","Throne and Lion", "Bruno Mars","Tyler the Creator","Amerigo Gazaway", "Iron Maiden", "Aaliyah", "Shane Ward", "The Lumineers", "Imagine Dragons", "Sesame Street", "Modest Mouse", "Lady Gaga", "Cheif Keef", "Angry Somoans", "Justin Bieber", "Lil Wayne", "Reonda", "Kayne West", "Burning Spear", "DJ Holiday", "Dangerous", "Thompson Square", "Filter", "Madonna", "Miley Cirus", "Various Artists ", "Alicia Keys", "Plndr", "Burning Spear","Throne and Lion", "Bruno Mars","Tyler the Creator","Amerigo Gazaway", "Iron Maiden", "Aaliyah", "Shane Ward", "The Lumineers", "Imagine Dragons", "Sesame Street", "Modest Mouse", "Lady Gaga", "Cheif Keef", "Angry Somoans", "Justin Bieber", "Lil Wayne", "Reonda", "Kayne West", "Burning Spear", "DJ Holiday", "Dangerous", "Thompson Square", "Filter", "Madonna", "Miley Cirus", "Various Artists ", "Alicia Keys", "Plndr", "Burning Spear","Throne and Lion", "Bruno Mars","Tyler the Creator","Amerigo Gazaway", "Iron Maiden", "Aaliyah", "Shane Ward", "The Lumineers", "Imagine Dragons", "Sesame Street", "Modest Mouse", "Lady Gaga", "Cheif Keef", "Angry Somoans", "Justin Bieber", "Lil Wayne", "Reonda", "Kayne West", "Burning Spear", "DJ Holiday", "Dangerous", "Thompson Square", "Filter", "Madonna", "Miley Cirus", "Various Artists ", "Alicia Keys", "Plndr", "Burning Spear","Throne and Lion", "Bruno Mars","Tyler the Creator","Amerigo Gazaway", "Iron Maiden", "Aaliyah", "Shane Ward", "The Lumineers", "Imagine Dragons", "Sesame Street", "Modest Mouse", "Lady Gaga", "Cheif Keef", "Angry Somoans", "Justin Bieber", "Lil Wayne", "Reonda", "Kayne West", "Burning Spear", "DJ Holiday", "Dangerous", "Thompson Square", "Filter", "Madonna", "Miley Cirus"];
 
 
+	//// STATIONS
+		var stationsArray = ["Album of the Week","Today's Hits","'80s,'90s & Today","'00 Hits","Soft Hits","Oldies","'70s Hits" ];
 	
 	
 // SIDE MENU FUNCTION
@@ -121,9 +123,13 @@ function dragPlayhead(){
 					
 						// Changes the background image depending on the playhead position
 						if (xPos == position){
-							$('.background').css("background-image", "url(images/image"+i+".jpg)");
-							$('.songName').text(titleArray[i]);
-							$('.artistName').text(artistArray[i]);
+							//$('.background').css("background-image", "url(images/image"+i+".jpg)");
+							//$('.songName').text(titleArray[i]);
+							//$('.artistName').text(artistArray[i]);
+							changeArtist(); 	// CHANGE THE ARTIST
+							changeStation(); 	// CHANGE THE STATION
+							changeTitle(); 		// CHANGE THE SONG
+							changeBackground()	// CHANGE THE BACKGROUND
 						}
 					}
 				}
@@ -158,6 +164,48 @@ function setPreset(){
 }
 
 
+// LOAD A RANDOM ARTIST
+function changeArtist(){
+	
+	// CHOOSE ONE OF THE ARTIST RANDOMLY
+	var i = Math.floor((Math.random()*artistArray.length)+1); 
+	
+	// SET ARTIST TEXT WITH THE RANDOM VALUE
+	$('.artistName').text(artistArray[i]);
+
+	
+}
+
+// LOAD A RANDOM STATION
+function changeStation(){
+	
+	// CHOOSE ONE OF THE STATIONS RANDOMLY
+	var i = Math.floor((Math.random()*stationsArray.length)+1); 
+	
+	// SET ARTIST TEXT WITH THE RANDOM VALUE
+	$('.stationName').text(stationsArray[i]);
+}
+
+// LOAD A RANDOM SONG
+function changeTitle(){
+		
+	// CHOOSE ONE OF THE STATIONS RANDOMLY
+	var i = Math.floor((Math.random()*titleArray.length)+1); 
+	
+	// SET ARTIST TEXT WITH THE RANDOM VALUE
+	$('.songName').text(titleArray[i]);	
+}
+
+// LOAD A RANDOM BACKGROUND
+function changeBackground(){
+		
+	// CHOOSE ONE OF THE STATIONS RANDOMLY
+	var i = Math.floor((Math.random()*90)+1); 
+	
+	// SET ARTIST TEXT WITH THE RANDOM VALUE
+	$('.background').css("background-image", "url(images/image"+i+".jpg)");	
+}
+
 
 // MOVE NEEDLE POSITION
 function moveNeedle(x){
@@ -166,9 +214,10 @@ function moveNeedle(x){
 	var playhead = $('.playhead');
 	
 	// ANIMATE THE PLAYHEAD TO THE PASSED PARAMETER X
-	playhead.animate({ left: x},500, 'easeOutElastic',{duration: 200});
+	//playhead.animate({ left: x},700, 'easeInOutQuart');
+	//playhead.animate({ left: x},700, 'easeOutExpo');
+	playhead.animate({ left: x},700, 'easeInOutCubic');
 }
-
 
 
 
@@ -184,6 +233,10 @@ function clickToTune(){
 		tuner.click(function(e){
 			var needlePosition = e.pageX - 2*(playhead.width())- playheadNeedle.width()/2;	
 			moveNeedle(needlePosition); // AFTER THE TUNER HAS BEEN CLICKED, MOVE THE PLAYHEAD GRAPHIC 
+			changeArtist(); 	// CHANGE THE ARTIST
+			changeStation(); 	// CHANGE THE STATION
+			changeTitle(); 		// CHANGE THE SONG
+			changeBackground()	// CHANGE THE BACKGROUND
 		});		
 }
 
