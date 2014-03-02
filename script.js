@@ -1,5 +1,5 @@
 
-$(document).ready(function(){	
+$(document).ready(function(e){	
 
 
 //// GLOBAL VARIABLES
@@ -134,9 +134,9 @@ function dragPlayhead(){
 // SET PRESETS WHEN TAPPING THE + BUTTON
 function setPreset(){
 	
-	var presetButton = $('#add');
+	var presetButton = $('#add'); // GRAB THE ADD BUTTON
 	
-	var i = 0;
+	var i = 0; // START A COUNTER FOR UNIQUE PRESET LOCATIONS
 	
 	//CAPTURE THE X POSITION OF THE CLICK WITHIN THE TUNER REGION
 	presetButton.click(function(){
@@ -157,6 +157,36 @@ function setPreset(){
 	});
 }
 
+
+
+// MOVE NEEDLE POSITION
+function moveNeedle(x){
+	
+	// VARIABLES
+	var playhead = $('.playhead');
+	
+	// ANIMATE THE PLAYHEAD TO THE PASSED PARAMETER X
+	playhead.animate({ left: x},500, 'easeOutElastic',{duration: 200});
+}
+
+
+
+
+// CLICK GO DIRECTLY TO ANY POINT ON THE TUNER
+function clickToTune(){
+	
+		//VARIABLES FOR THE FUNCTION
+		var playhead = $('.playhead');
+		var playheadNeedle = $('.playheadgraphic');
+		var tuner = $('.tuner');
+		
+		// TEST TO SEE IF TUNER HAS BEEN CLICKED
+		tuner.click(function(e){
+			var needlePosition = e.pageX - 2*(playhead.width())- playheadNeedle.width()/2;	
+			moveNeedle(needlePosition); // AFTER THE TUNER HAS BEEN CLICKED, MOVE THE PLAYHEAD GRAPHIC 
+		});		
+}
+
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
 		sideMenu(); 	// CREATES THE SIDE MENU
@@ -164,11 +194,10 @@ function setPreset(){
 		writeLabels();	// WRITE THE LABELS IN THE RIGHT HAND HIDDEN MENU
 		dragPlayhead()  // ALLOWS PLAYHEAD TO BE DRAGGABLE
 		writeStations() // WRITE STATION LABELS UNDER TUNER BAR
-		setPreset(); 	// SET PRESETS WHEN TAPPING THE + BUTTON		
+		setPreset(); 	// SET PRESETS WHEN TAPPING THE + BUTTON
+		clickToTune(); 	// CLICK TO TUNE FUNCTION		
 });
 	
-
-
 	
  
  
