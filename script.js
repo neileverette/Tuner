@@ -144,6 +144,26 @@ function dragPlayhead(){
 			});
 	}
 
+// CLICK GO DIRECTLY TO ANY POINT ON THE TUNER
+function clickToTune(){
+	
+		//VARIABLES FOR THE FUNCTION
+		var playhead = $('.playhead');
+		var playheadNeedle = $('.playheadgraphic');
+		var tuner = $('.tuner');
+		var leftMargin = parseInt($('.stationInfo').css("left"));
+		
+		
+		// FUNCTION TO CHANGE THE PLAYHEAD BASED ON THE CLICK STATE IN THE TUNER GRAPHIC
+		tuner.click(function(e){
+			var needlePosition = e.pageX-leftMargin-playhead.width()/2;
+			moveNeedle(needlePosition); // AFTER THE TUNER HAS BEEN CLICKED, MOVE THE PLAYHEAD GRAPHIC 
+			changeArtist(); 	// CHANGE THE ARTIST
+			changeStation(); 	// CHANGE THE STATION
+			changeTitle(); 		// CHANGE THE SONG
+			changeBackground()	// CHANGE THE BACKGROUND
+		});		
+}
 
 // SET PRESETS WHEN TAPPING THE + BUTTON
 function setPreset(){
@@ -174,7 +194,6 @@ function setPreset(){
 		
 	});
 }
-
 
 // LOAD A RANDOM ARTIST
 function changeArtist(){
@@ -216,7 +235,6 @@ function changeBackground(){
 	$('.background').css("background-image", "url(images/image"+i+".jpg)");	
 }
 
-
 // MOVE NEEDLE POSITION
 function moveNeedle(x){
 	
@@ -239,25 +257,6 @@ function moveToast(x){
 	
 	// MOVE THE LABLE ACCORDING TO THE OFFSET
 	$('.toast').css("margin-left", offset);	
-}
-
-// CLICK GO DIRECTLY TO ANY POINT ON THE TUNER
-function clickToTune(){
-	
-		//VARIABLES FOR THE FUNCTION
-		var playhead = $('.playhead');
-		var playheadNeedle = $('.playheadgraphic');
-		var tuner = $('.tuner');
-		
-		// TEST TO SEE IF TUNER HAS BEEN CLICKED
-		tuner.click(function(e){
-			var needlePosition = e.pageX - 2*(playhead.width())- playheadNeedle.width()/2;	
-			moveNeedle(needlePosition); // AFTER THE TUNER HAS BEEN CLICKED, MOVE THE PLAYHEAD GRAPHIC 
-			changeArtist(); 	// CHANGE THE ARTIST
-			changeStation(); 	// CHANGE THE STATION
-			changeTitle(); 		// CHANGE THE SONG
-			changeBackground()	// CHANGE THE BACKGROUND
-		});		
 }
 
 		
