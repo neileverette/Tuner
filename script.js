@@ -253,23 +253,21 @@ function moveToast(x){
 
 // SET MOUSE EVENT ON ADD BUTTON
 function mouseEvents(){
-	
-	// note to self, set css style rather than changing the properties in jquery
 		
 	$('.button:last').mouseenter(function() {
-    	$(this).css({border: "1px solid rgba(255, 255, 255, 1)"});
+		$(this).addClass("buttonHover");
 		});
 			
 	$('.button:last').mouseleave(function() {
-    	$(this).css({border: "1px solid rgba(255, 255, 255, 0.5)"});
+		$(this).removeClass("buttonHover");
 		});	
 		
 	$('.button:last').mousedown(function() {
-    	$(this).css({'border': '1px solid white', 'box-shadow': '0 0 10px #FFF'});
+    	$(this).addClass("buttonPress");
 		});	
 		
 	$('.button:last').mouseup(function() {
-    	$(this).css({'border': '1px solid rgba(255, 255, 255, 1)', 'box-shadow': '0 0 0px #FFF'});
+		$(this).removeClass("buttonPress");
 		});	
 }
 		
