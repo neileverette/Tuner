@@ -254,15 +254,21 @@ function moveToast(x){
 // SET MOUSE EVENT ON ADD BUTTON
 function mouseEvents(){
 		
-	$('.button').hover(function() {
-    	$(this).animate().css({"background-color":"rgba(255,255,255,0.01)"}, 500);
+	$('.button:last').mouseenter(function() {
+    	$(this).css({border: "1px solid rgba(255, 255, 255, 1)"});
+		});
+			
+	$('.button:last').mouseleave(function() {
+    	$(this).css({border: "1px solid rgba(255, 255, 255, 0.5)"});
 		});	
 		
-//	$('.button').mouseleave(function() {
-//    	$(this).animate({"background-color":"rgba(0,0,0,0.7)"}, 500);
-//		});	
-		//background-color: rgba(0,0,0,0.7);
-		//background-color: rgba(255,255,255,0.25);
+	$('.button:last').mousedown(function() {
+    	$(this).css({'border': '1px solid white', 'box-shadow': '0 0 10px #FFF'});
+		});	
+		
+	$('.button:last').mouseup(function() {
+    	$(this).css({border: "1px solid rgba(255, 255, 255, 1)"});
+		});	
 
 }
 
