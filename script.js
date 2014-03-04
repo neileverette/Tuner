@@ -13,12 +13,6 @@ $(document).ready(function(e){
 	//// STATIONS
 		var stationsArray = ["Album of the Week","Today's Hits","'80s,'90s & Today","'00 Hits","Soft Hits","Oldies","'70s Hits" ];
 
-
-// SET NEEDLE POSITION
-	function setNeedle(x){
-	
-	console.log(x);
-	}	
 	
 // SIDE MENU FUNCTION
 	function sideMenu(){
@@ -257,7 +251,13 @@ function moveToast(x){
 	$('.toast').css("margin-left", offset);	
 }
 
-
+// SET MOUSE EVENT ON ADD BUTTON
+function mouseEvents(){
+	
+	$('.button').hover(function(){
+		//console.log("I work");
+		});
+}
 
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
@@ -267,7 +267,8 @@ function moveToast(x){
 		dragPlayhead()  // ALLOWS PLAYHEAD TO BE DRAGGABLE
 		writeStations() // WRITE STATION LABELS UNDER TUNER BAR
 		setPreset(); 	// SET PRESETS WHEN TAPPING THE + BUTTON
-		clickToTune(); 	// CLICK TO TUNE FUNCTION		
+		clickToTune(); 	// CLICK TO TUNE FUNCTION	
+		mouseEvents();	
 });
 	
 	
