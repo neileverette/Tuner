@@ -4,17 +4,11 @@ $(document).ready(function(e){
 
 //// GLOBAL VARIABLES
 
-	//// NEEDLE POSITION
-//	var needle = $('.playhead');
-//	var playhead = Math.floor($('.playhead').offset().left);
-
-
 	//// ALBUM TITLES
 		var titleArray = [ "Rocky Horror Picture ", "Girl on Fire", "Must Be Nice", "People of the World","Holding Sky","When You Were Mine","Goblin", "Chromeo", "A Real Live One", "One in a Million", "Obsession", "Flowers in Your Haiur", "Night Visions", "Muppets Rawk", "Good News For People Who Like Bad News", "Art Pop", "Finally Rich", "I'm In Love With Your Mom", "Believe", "Dedication4", "Moon","Graduation", "The World Should Know", "Salute Me, Shoot Me", "Vicious Lies", "Just Feels Good", "The Sun Comes Out At Night", "Girl Gone Wild", "Bangerz", "Rocky Horror Picture ", "Girl on Fire", "Must Be Nice", "People of the World","Holding Sky","When You Were Mine","Goblin", "Chromeo", "A Real Live One", "One in a Million", "Obsession", "Flowers in Your Haiur", "Night Visions", "Muppets Rawk", "Good News For People Who Like Bad News", "Art Pop", "Finally Rich", "I'm In Love With Your Mom", "Believe", "Dedication4", "Moon","Graduation", "The World Should Know", "Salute Me, Shoot Me", "Vicious Lies", "Just Feels Good", "The Sun Comes Out At Night", "Girl Gone Wild", "Bangerz", "Rocky Horror Picture ", "Girl on Fire", "Must Be Nice", "People of the World","Holding Sky","When You Were Mine","Goblin", "Chromeo", "A Real Live One", "One in a Million", "Obsession", "Flowers in Your Haiur", "Night Visions", "Muppets Rawk", "Good News For People Who Like Bad News", "Art Pop", "Finally Rich", "I'm In Love With Your Mom", "Believe", "Dedication4", "Moon","Graduation", "The World Should Know", "Salute Me, Shoot Me", "Vicious Lies", "Just Feels Good", "The Sun Comes Out At Night", "Girl Gone Wild", "Bangerz", "Rocky Horror Picture ", "Girl on Fire", "Must Be Nice", "People of the World","Holding Sky","When You Were Mine","Goblin", "Chromeo", "A Real Live One", "One in a Million", "Obsession", "Flowers in Your Haiur", "Night Visions", "Muppets Rawk", "Good News For People Who Like Bad News", "Art Pop", "Finally Rich", "I'm In Love With Your Mom", "Believe", "Dedication4", "Moon","Graduation", "The World Should Know", "Salute Me, Shoot Me", "Vicious Lies", "Just Feels Good", "The Sun Comes Out At Night", "Girl Gone Wild", "Bangerz"];
 		
 	//// ARTISTS TITLES
 		var artistArray = [ "Various Artists ", "Alicia Keys", "Plndr", "Burning Spear","Throne and Lion", "Bruno Mars","Tyler the Creator","Amerigo Gazaway", "Iron Maiden", "Aaliyah", "Shane Ward", "The Lumineers", "Imagine Dragons", "Sesame Street", "Modest Mouse", "Lady Gaga", "Cheif Keef", "Angry Somoans", "Justin Bieber", "Lil Wayne", "Reonda", "Kayne West", "Burning Spear", "DJ Holiday", "Dangerous", "Thompson Square", "Filter", "Madonna", "Miley Cirus", "Various Artists ", "Alicia Keys", "Plndr", "Burning Spear","Throne and Lion", "Bruno Mars","Tyler the Creator","Amerigo Gazaway", "Iron Maiden", "Aaliyah", "Shane Ward", "The Lumineers", "Imagine Dragons", "Sesame Street", "Modest Mouse", "Lady Gaga", "Cheif Keef", "Angry Somoans", "Justin Bieber", "Lil Wayne", "Reonda", "Kayne West", "Burning Spear", "DJ Holiday", "Dangerous", "Thompson Square", "Filter", "Madonna", "Miley Cirus", "Various Artists ", "Alicia Keys", "Plndr", "Burning Spear","Throne and Lion", "Bruno Mars","Tyler the Creator","Amerigo Gazaway", "Iron Maiden", "Aaliyah", "Shane Ward", "The Lumineers", "Imagine Dragons", "Sesame Street", "Modest Mouse", "Lady Gaga", "Cheif Keef", "Angry Somoans", "Justin Bieber", "Lil Wayne", "Reonda", "Kayne West", "Burning Spear", "DJ Holiday", "Dangerous", "Thompson Square", "Filter", "Madonna", "Miley Cirus", "Various Artists ", "Alicia Keys", "Plndr", "Burning Spear","Throne and Lion", "Bruno Mars","Tyler the Creator","Amerigo Gazaway", "Iron Maiden", "Aaliyah", "Shane Ward", "The Lumineers", "Imagine Dragons", "Sesame Street", "Modest Mouse", "Lady Gaga", "Cheif Keef", "Angry Somoans", "Justin Bieber", "Lil Wayne", "Reonda", "Kayne West", "Burning Spear", "DJ Holiday", "Dangerous", "Thompson Square", "Filter", "Madonna", "Miley Cirus"];
-
 
 	//// STATIONS
 		var stationsArray = ["Album of the Week","Today's Hits","'80s,'90s & Today","'00 Hits","Soft Hits","Oldies","'70s Hits" ];
@@ -83,7 +77,7 @@ $(document).ready(function(e){
 	}
 		
 // ALLOWS PLAYHEAD TO BE DRAGGABLE
-function dragPlayhead(){
+	function dragPlayhead(){
 		
 		// VARIABLES FOR THE FUNCTION		
 		
@@ -145,7 +139,7 @@ function dragPlayhead(){
 	}
 
 // CLICK GO DIRECTLY TO ANY POINT ON THE TUNER
-function clickToTune(){
+	function clickToTune(){
 	
 		//VARIABLES FOR THE FUNCTION
 		var playhead = $('.playhead');
@@ -166,7 +160,7 @@ function clickToTune(){
 }
 
 // SET PRESETS WHEN TAPPING THE + BUTTON
-function setPreset(){
+	function setPreset(){
 	
 	var presetButton = $('#add'); // GRAB THE ADD BUTTON
 	
@@ -176,32 +170,20 @@ function setPreset(){
 	presetButton.click(function(){
 		
 		//VARIABLES FOR THE FUNCTION
-		//var playhead = $('.playheadgraphic');
-		//var playheadHitArea = $('.playhead').width();
-		//var position = parseInt(playhead.offset().left);
-		//var xPosition = (position-playheadHitArea- playheadHitArea/2);
-		
-		
-		//COPIED FROM THE CLICK FUNCTION
-		//VARIABLES FOR THE FUNCTION
-		var playhead = $('.playhead');
-		var playheadPostion = 0;
-		var leftMargin = parseInt($('.stationInfo').css("left"));
-		
-		// I need to get the current position of the playhead
-		var needlePosition = e.pageX-leftMargin-playhead.width()/2;
+		var playhead = $('.playheadgraphic'); 							// GRAB THE PLAYHEAD ELEMENT
+		var leftMargin = parseInt($('.stationInfo').css("left"));		// GET THE LEFT MARGIN OF THE DIV ELEMENT
+		var needlePosition = (playhead.offset().left) - leftMargin;					// GET THE LEFT CURRENT POSITION OF THE PLAYHEAD
 	
 		i++; // increment the counter
 		
 		//APPEND THE PRESET AFTER THE TUNER DIV
-		$('.tuner').append("<div id = \"preset"+i+"\" class=\"preset\"></div>");
+		$('.tuner').append("<div id = \"preset"+i+"\" class=\"preset\"></div>");	// ADD THE PRESET MARK ON THE TUNER HEAD
 		
 		//SET THE X POSITION OF THE PRESET
-		//$( ".preset:last" ).css("left", xPosition);	
-		$( ".preset:last" ).css("left", needlePosition);	
+		$( ".preset:last" ).css("left", needlePosition);				//SET THE LOCATION OF THE PRESET MARK		
 		
-		moveToast(xPosition);  // CHANGE LOCATION OF TOAST
-		showToast(); // DISPLAY TOAST AFTER PRESET
+		moveToast(needlePosition);  		// CHANGE LOCATION OF TOAST
+		showToast(i); 	// DISPLAY TOAST AFTER PRESET
 		
 	});
 }
@@ -254,7 +236,12 @@ function moveNeedle(x){
 }
 
 // DISPLAY TOAST
-function showToast(){
+function showToast(i){
+	var toast = $('.toast');
+	var toastMessage = "Preset";  //add the i
+	
+	toast.text(toastMessage + " " + i + " added");
+
 	$('.toast').fadeIn(500);
 	$('.toast').fadeOut(2000);
 }
@@ -269,6 +256,8 @@ function moveToast(x){
 	// MOVE THE LABLE ACCORDING TO THE OFFSET
 	$('.toast').css("margin-left", offset);	
 }
+
+
 
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
