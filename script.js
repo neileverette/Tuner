@@ -3,6 +3,12 @@ $(document).ready(function(e){
 
 
 //// GLOBAL VARIABLES
+
+	//// NEEDLE POSITION
+//	var needle = $('.playhead');
+//	var playhead = Math.floor($('.playhead').offset().left);
+
+
 	//// ALBUM TITLES
 		var titleArray = [ "Rocky Horror Picture ", "Girl on Fire", "Must Be Nice", "People of the World","Holding Sky","When You Were Mine","Goblin", "Chromeo", "A Real Live One", "One in a Million", "Obsession", "Flowers in Your Haiur", "Night Visions", "Muppets Rawk", "Good News For People Who Like Bad News", "Art Pop", "Finally Rich", "I'm In Love With Your Mom", "Believe", "Dedication4", "Moon","Graduation", "The World Should Know", "Salute Me, Shoot Me", "Vicious Lies", "Just Feels Good", "The Sun Comes Out At Night", "Girl Gone Wild", "Bangerz", "Rocky Horror Picture ", "Girl on Fire", "Must Be Nice", "People of the World","Holding Sky","When You Were Mine","Goblin", "Chromeo", "A Real Live One", "One in a Million", "Obsession", "Flowers in Your Haiur", "Night Visions", "Muppets Rawk", "Good News For People Who Like Bad News", "Art Pop", "Finally Rich", "I'm In Love With Your Mom", "Believe", "Dedication4", "Moon","Graduation", "The World Should Know", "Salute Me, Shoot Me", "Vicious Lies", "Just Feels Good", "The Sun Comes Out At Night", "Girl Gone Wild", "Bangerz", "Rocky Horror Picture ", "Girl on Fire", "Must Be Nice", "People of the World","Holding Sky","When You Were Mine","Goblin", "Chromeo", "A Real Live One", "One in a Million", "Obsession", "Flowers in Your Haiur", "Night Visions", "Muppets Rawk", "Good News For People Who Like Bad News", "Art Pop", "Finally Rich", "I'm In Love With Your Mom", "Believe", "Dedication4", "Moon","Graduation", "The World Should Know", "Salute Me, Shoot Me", "Vicious Lies", "Just Feels Good", "The Sun Comes Out At Night", "Girl Gone Wild", "Bangerz", "Rocky Horror Picture ", "Girl on Fire", "Must Be Nice", "People of the World","Holding Sky","When You Were Mine","Goblin", "Chromeo", "A Real Live One", "One in a Million", "Obsession", "Flowers in Your Haiur", "Night Visions", "Muppets Rawk", "Good News For People Who Like Bad News", "Art Pop", "Finally Rich", "I'm In Love With Your Mom", "Believe", "Dedication4", "Moon","Graduation", "The World Should Know", "Salute Me, Shoot Me", "Vicious Lies", "Just Feels Good", "The Sun Comes Out At Night", "Girl Gone Wild", "Bangerz"];
 		
@@ -12,7 +18,13 @@ $(document).ready(function(e){
 
 	//// STATIONS
 		var stationsArray = ["Album of the Week","Today's Hits","'80s,'90s & Today","'00 Hits","Soft Hits","Oldies","'70s Hits" ];
+
+
+// SET NEEDLE POSITION
+	function setNeedle(x){
 	
+	console.log(x);
+	}	
 	
 // SIDE MENU FUNCTION
 	function sideMenu(){
@@ -38,7 +50,6 @@ $(document).ready(function(e){
 		});
 	}	
 
-
 // WRITES THE LABLES IN THE LEFT MENU
 	function writeLabels(){
 		
@@ -52,7 +63,6 @@ $(document).ready(function(e){
 		}
 	}
 
-
 // WIRTE LABELS UNDER THE TUNER BAR
 	function writeStations(){
 		
@@ -64,7 +74,6 @@ $(document).ready(function(e){
 		}
 	}
 	
-	
 // DRAWS THE RIDGES
 	function drawRidges(){
 		for ( var i = 0; i < 400; i++ ) {
@@ -73,7 +82,6 @@ $(document).ready(function(e){
 		}
 	}
 		
-
 // ALLOWS PLAYHEAD TO BE DRAGGABLE
 function dragPlayhead(){
 		
@@ -106,7 +114,6 @@ function dragPlayhead(){
 				$('.playhead').draggable({ axis: "x" });
 		});	
 			
-	
 		// SWAP BACKGROUND IMAGE AS THE PLAYHEAD MOVES
 			$('.playhead').draggable(
 				{drag: function(){
@@ -161,6 +168,10 @@ function setPreset(){
 		
 		//SET THE X POSITION OF THE PRESET
 		$( ".preset:last" ).css("left", xPosition);	
+		
+		moveToast(xPosition);  // CHANGE LOCATION OF TOAST
+		showToast(); // DISPLAY TOAST AFTER PRESET
+		
 	});
 }
 
@@ -172,9 +183,7 @@ function changeArtist(){
 	var i = Math.floor((Math.random()*artistArray.length)+1); 
 	
 	// SET ARTIST TEXT WITH THE RANDOM VALUE
-	$('.artistName').text(artistArray[i]);
-
-	
+	$('.artistName').text(artistArray[i]);	
 }
 
 // LOAD A RANDOM STATION
@@ -211,14 +220,26 @@ function changeBackground(){
 // MOVE NEEDLE POSITION
 function moveNeedle(x){
 	
-	// VARIABLES
-	var playhead = $('.playhead');
-	
 	// ANIMATE THE PLAYHEAD TO THE PASSED PARAMETER X
-	playhead.animate({ left: x},700, 'easeInOutCubic');
+	$('.playhead').animate({ left: x},700, 'easeInOutCubic');
 }
 
+// DISPLAY TOAST
+function showToast(){
+	$('.toast').fadeIn(500);
+	$('.toast').fadeOut(2000);
+}
 
+// SET LOCATION OF TOAST
+function moveToast(x){
+	console.log(x);
+	
+	// SET VARIABLE TO CENTER THE LABEL ON THE PLAYHEAD
+	var offset = x - $('.toast').width()/2; 
+	
+	// MOVE THE LABLE ACCORDING TO THE OFFSET
+	$('.toast').css("margin-left", offset);	
+}
 
 // CLICK GO DIRECTLY TO ANY POINT ON THE TUNER
 function clickToTune(){
