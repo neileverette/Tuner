@@ -253,10 +253,17 @@ function moveToast(x){
 
 // SET MOUSE EVENT ON ADD BUTTON
 function mouseEvents(){
-	
-	$('.button').hover(function(){
-		//console.log("I work");
-		});
+		
+	$('.button').hover(function() {
+    	$(this).animate().css({"background-color":"rgba(255,255,255,0.01)"}, 500);
+		});	
+		
+//	$('.button').mouseleave(function() {
+//    	$(this).animate({"background-color":"rgba(0,0,0,0.7)"}, 500);
+//		});	
+		//background-color: rgba(0,0,0,0.7);
+		//background-color: rgba(255,255,255,0.25);
+
 }
 
 		
