@@ -253,6 +253,8 @@ function moveToast(x){
 
 // SET MOUSE EVENT ON ADD BUTTON
 function mouseEvents(){
+	
+	// note to self, set css style rather than changing the properties in jquery
 		
 	$('.button:last').mouseenter(function() {
     	$(this).css({border: "1px solid rgba(255, 255, 255, 1)"});
@@ -267,11 +269,9 @@ function mouseEvents(){
 		});	
 		
 	$('.button:last').mouseup(function() {
-    	$(this).css({border: "1px solid rgba(255, 255, 255, 1)"});
+    	$(this).css({'border': '1px solid rgba(255, 255, 255, 1)', 'box-shadow': '0 0 0px #FFF'});
 		});	
-
 }
-
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
 		sideMenu(); 	// CREATES THE SIDE MENU
