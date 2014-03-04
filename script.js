@@ -176,10 +176,20 @@ function setPreset(){
 	presetButton.click(function(){
 		
 		//VARIABLES FOR THE FUNCTION
-		var playhead = $('.playheadgraphic');
-		var playheadHitArea = $('.playhead').width();
-		var position = parseInt(playhead.offset().left);
-		var xPosition = (position-playheadHitArea- playheadHitArea/2);
+		//var playhead = $('.playheadgraphic');
+		//var playheadHitArea = $('.playhead').width();
+		//var position = parseInt(playhead.offset().left);
+		//var xPosition = (position-playheadHitArea- playheadHitArea/2);
+		
+		
+		//COPIED FROM THE CLICK FUNCTION
+		//VARIABLES FOR THE FUNCTION
+		var playhead = $('.playhead');
+		var playheadPostion = 0;
+		var leftMargin = parseInt($('.stationInfo').css("left"));
+		
+		// I need to get the current position of the playhead
+		var needlePosition = e.pageX-leftMargin-playhead.width()/2;
 	
 		i++; // increment the counter
 		
@@ -187,7 +197,8 @@ function setPreset(){
 		$('.tuner').append("<div id = \"preset"+i+"\" class=\"preset\"></div>");
 		
 		//SET THE X POSITION OF THE PRESET
-		$( ".preset:last" ).css("left", xPosition);	
+		//$( ".preset:last" ).css("left", xPosition);	
+		$( ".preset:last" ).css("left", needlePosition);	
 		
 		moveToast(xPosition);  // CHANGE LOCATION OF TOAST
 		showToast(); // DISPLAY TOAST AFTER PRESET
