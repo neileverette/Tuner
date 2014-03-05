@@ -270,6 +270,10 @@ function mouseEvents(){
 		$(this).removeClass("buttonPress");
 		});	
 }
+
+function splashScreen(x){
+	$('.splashScreen').delay(x).fadeOut();
+}
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
 		sideMenu(); 	// CREATES THE SIDE MENU
@@ -279,7 +283,8 @@ function mouseEvents(){
 		writeStations() // WRITE STATION LABELS UNDER TUNER BAR
 		setPreset(); 	// SET PRESETS WHEN TAPPING THE + BUTTON
 		clickToTune(); 	// CLICK TO TUNE FUNCTION	
-		mouseEvents();	
+		mouseEvents();	// SET THE MOUSE EVENTS
+		splashScreen(3000); // LOAD THE SPLASH SCREEN
 });
 	
 	
