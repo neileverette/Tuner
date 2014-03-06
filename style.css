@@ -330,7 +330,7 @@ p{
 }
 
 .loading{
-	border: 1px rgba(255, 255, 255, 0.4) solid;
+	border: 2px rgba(255, 255, 255, 0.4) solid;
 	display: inline-block;
 	position: absolute;
 	width: 60%;
@@ -338,18 +338,16 @@ p{
 	margin-right: 20%;
 	height: 20px;
 	top: 65%;
+	overflow:hidden;
 }
 
 .loadingFill{
-	border: 1px rgba(255, 255, 255, 0.4) solid;
-	display: inline-block;
-	position: absolute;
-	width: 30%;
-	margin-left: 20%;
-	margin-right: 20%;
-	height: 20px;
-	top: 65%;
-	background-color: rgba(255, 255, 255, 0.4);
+	display: none;
+	position: relative;
+	width: 100%;
+	margin: 0%;
+	height:100%;
+	background-color: rgba(255, 255, 255, 0.3);
 }
 
 #pause,#skip,#like,#dislike,#add{

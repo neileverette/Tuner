@@ -279,17 +279,24 @@ function sideMenu(){
 	
 	// SHOW THE MENU WHEN THE USER HOVERS OVER TO THE RIGHT OF THE WINDOW
 	$('.menu-hover').mouseenter(function(){
-		$('.side-menu').css({display: "block"});
+		$('.side-menu').toggle('slide', {direction: 'right'}, 300);
 		});
 		
 	// HIDE THE MENU WHEN THE USER LEAVES THE SIDEBAR
 	$('.side-menu').mouseleave(function(){
-		$('.side-menu').css({display: "none"});
+		$('.side-menu').toggle('slide', {direction: 'right'}, 300);
 		});
+}
+
+function loadingGraphic(){
+	$('.loadingFill').delay(800).toggle('slide', {direction: 'left'}, 900);
+	
 }
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
-		//sideMenu(); 	// CREATES THE SIDE MENU
+		splashScreen(3000); // LOAD THE SPLASH SCREEN
+		loadingGraphic();
+
 		drawRidges(); 	// DRAW RIDGES IN THE TUNER BAR
 		writeLabels();	// WRITE THE LABELS IN THE RIGHT HAND HIDDEN MENU
 		dragPlayhead()  // ALLOWS PLAYHEAD TO BE DRAGGABLE
@@ -297,7 +304,7 @@ function sideMenu(){
 		setPreset(); 	// SET PRESETS WHEN TAPPING THE + BUTTON
 		clickToTune(); 	// CLICK TO TUNE FUNCTION	
 		mouseEvents();	// SET THE MOUSE EVENTS
-		splashScreen(500); // LOAD THE SPLASH SCREEN
+		
 		sideMenu();		// SIDE MENU FUNCTIONALITY
 });
 	
