@@ -13,41 +13,22 @@ $(document).ready(function(e){
 	//// STATIONS
 		var stationsArray = ["Album of the Week","Today's Hits","'80s,'90s & Today","'00 Hits","Soft Hits","Oldies","'70s Hits" ];
 
-	
-// OLD SIDE MENU FUNCTION
-/*	function sideMenu(){
-		$('.menu-hover').on({
-			'mouseleave': function(){
-				var $menu = $(".side-menu");
-					$menu.animate({
-					left: 300
-				})
-			}
-		})
-	
-		// ANIMATES THE SIDE MENU
-		$(".menu-hover").on({
-			'mouseenter': function (e) {
-				e.stopPropagation();
-							var $menu = $(".side-menu");
-							$menu.animate({
-							 left: parseInt($menu.css('left')) < 1 ?
-							 $menu.css('left') == 0 :
-								0})
-						   }
-		});
-	} */	
 
-// WRITES THE LABLES IN THE LEFT MENU
-	function writeLabels(){
-		
-		//// SLIDE OUT MENU VARIABLES
-		var menuArray = [ "Search", "New Station", "Manage Stations" , "History", "Settings", "Help"];
-		
-		// Loop that adds individual items to the menu
-		for ( var i = 0; i < menuArray.length; i++ ) {
-		   // $('.side-menu').append("<p class = \"menutext\">" +labelArray[i] + "</p>");
-		   $('.side-menu').append("<p class = \"menutext\">"+menuArray[i] +"</p>");
+// FAKE SPLASH SCREEN
+	function splashScreen(x){
+	$('.splashScreen').delay(x).fadeOut();
+}	
+
+// FAKE LOADING GRAPHIC
+	function loadingGraphic(){
+	$('.loadingFill').delay(800).toggle('slide', {direction: 'left'}, 900);
+}
+
+// DRAWS THE RIDGES
+	function drawRidges(){
+		for ( var i = 0; i < 400; i++ ) {
+			// This loop creates the ridge graphics and appends each with its own ID and places them to the ridge div
+			$('.tuner').append("<div class = \"ridge\" id = \"ridge"+ i +"\"><div class = \"ridgegraphic\"></div></div>");
 		}
 	}
 
@@ -62,14 +43,52 @@ $(document).ready(function(e){
 		}
 	}
 	
-// DRAWS THE RIDGES
-	function drawRidges(){
-		for ( var i = 0; i < 400; i++ ) {
-			// This loop creates the ridge graphics and appends each with its own ID and places them to the ridge div
-			$('.tuner').append("<div class = \"ridge\" id = \"ridge"+ i +"\"><div class = \"ridgegraphic\"></div></div>");
+// WRITES THE LABLES IN THE LEFT MENU
+	function writeLabels(){
+		
+		//// SLIDE OUT MENU VARIABLES
+		var menuArray = [ "Search", "New Station", "Manage Stations" , "History", "Settings", "Help"];
+		
+		// Loop that adds individual items to the menu
+		for ( var i = 0; i < menuArray.length; i++ ) {
+		   // $('.side-menu').append("<p class = \"menutext\">" +labelArray[i] + "</p>");
+		   $('.side-menu').append("<p class = \"menutext\">"+menuArray[i] +"</p>");
 		}
 	}
+
+// CREATES THE SIDE MENU 
+	function sideMenu(){
+	// SHOW THE MENU WHEN THE USER HOVERS OVER TO THE RIGHT OF THE WINDOW
+	$('.menu-hover').mouseenter(function(){
+		$('.side-menu').toggle('slide', {direction: 'right'}, 300);
+		});
 		
+	// HIDE THE MENU WHEN THE USER LEAVES THE SIDEBAR
+	$('.side-menu').mouseleave(function(){
+		$('.side-menu').toggle('slide', {direction: 'right'}, 300);
+		});
+}
+
+// SET MOUSE EVENT ON ADD BUTTON
+	function mouseEvents(){
+		
+	$('.button:last').mouseenter(function() {
+		$(this).addClass("buttonHover");
+		});
+			
+	$('.button:last').mouseleave(function() {
+		$(this).removeClass("buttonHover");
+		});	
+		
+	$('.button:last').mousedown(function() {
+    	$(this).addClass("buttonPress");
+		});	
+		
+	$('.button:last').mouseup(function() {
+		$(this).removeClass("buttonPress");
+		});	
+}
+	
 // ALLOWS PLAYHEAD TO BE DRAGGABLE
 	function dragPlayhead(){
 		
@@ -183,7 +202,7 @@ $(document).ready(function(e){
 }
 
 // LOAD A RANDOM ARTIST
-function changeArtist(){
+	function changeArtist(){
 	
 	// CHOOSE ONE OF THE ARTIST RANDOMLY
 	var i = Math.floor((Math.random()*artistArray.length)+1); 
@@ -193,7 +212,7 @@ function changeArtist(){
 }
 
 // LOAD A RANDOM STATION
-function changeStation(){
+	function changeStation(){
 	
 	// CHOOSE ONE OF THE STATIONS RANDOMLY
 	var i = Math.floor((Math.random()*stationsArray.length)+1); 
@@ -203,7 +222,7 @@ function changeStation(){
 }
 
 // LOAD A RANDOM SONG
-function changeTitle(){
+	function changeTitle(){
 		
 	// CHOOSE ONE OF THE STATIONS RANDOMLY
 	var i = Math.floor((Math.random()*titleArray.length)+1); 
@@ -213,7 +232,7 @@ function changeTitle(){
 }
 
 // LOAD A RANDOM BACKGROUND
-function changeBackground(){
+	function changeBackground(){
 		
 	// CHOOSE ONE OF THE STATIONS RANDOMLY
 	var i = Math.floor((Math.random()*90)+1); 
@@ -223,14 +242,14 @@ function changeBackground(){
 }
 
 // MOVE NEEDLE POSITION
-function moveNeedle(x){
+	function moveNeedle(x){
 	
 	// ANIMATE THE PLAYHEAD TO THE PASSED PARAMETER X
 	$('.playhead').animate({ left: x},700, 'easeInOutCubic');
 }
 
 // DISPLAY TOAST
-function showToast(i){
+	function showToast(i){
 	var toast = $('.toast');
 	var toastMessage = "Preset";  //add the i
 	
@@ -241,7 +260,7 @@ function showToast(i){
 }
 
 // SET LOCATION OF TOAST
-function moveToast(x){
+	function moveToast(x){
 	console.log(x);
 	
 	// SET VARIABLE TO CENTER THE LABEL ON THE PLAYHEAD
@@ -251,61 +270,18 @@ function moveToast(x){
 	$('.toast').css("margin-left", offset);	
 }
 
-// SET MOUSE EVENT ON ADD BUTTON
-function mouseEvents(){
-		
-	$('.button:last').mouseenter(function() {
-		$(this).addClass("buttonHover");
-		});
-			
-	$('.button:last').mouseleave(function() {
-		$(this).removeClass("buttonHover");
-		});	
-		
-	$('.button:last').mousedown(function() {
-    	$(this).addClass("buttonPress");
-		});	
-		
-	$('.button:last').mouseup(function() {
-		$(this).removeClass("buttonPress");
-		});	
-}
-
-function splashScreen(x){
-	$('.splashScreen').delay(x).fadeOut();
-}
-
-function sideMenu(){
-	
-	// SHOW THE MENU WHEN THE USER HOVERS OVER TO THE RIGHT OF THE WINDOW
-	$('.menu-hover').mouseenter(function(){
-		$('.side-menu').toggle('slide', {direction: 'right'}, 300);
-		});
-		
-	// HIDE THE MENU WHEN THE USER LEAVES THE SIDEBAR
-	$('.side-menu').mouseleave(function(){
-		$('.side-menu').toggle('slide', {direction: 'right'}, 300);
-		});
-}
-
-function loadingGraphic(){
-	$('.loadingFill').delay(800).toggle('slide', {direction: 'left'}, 900);
-	
-}
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
 		splashScreen(3000); // LOAD THE SPLASH SCREEN
-		loadingGraphic();
-
-		drawRidges(); 	// DRAW RIDGES IN THE TUNER BAR
-		writeLabels();	// WRITE THE LABELS IN THE RIGHT HAND HIDDEN MENU
-		dragPlayhead()  // ALLOWS PLAYHEAD TO BE DRAGGABLE
+		loadingGraphic(); 	// DRAWS THE FAKE PROGRESS BAR
+		drawRidges(); 		// DRAW RIDGES IN THE TUNER BAR
 		writeStations() // WRITE STATION LABELS UNDER TUNER BAR
-		setPreset(); 	// SET PRESETS WHEN TAPPING THE + BUTTON
-		clickToTune(); 	// CLICK TO TUNE FUNCTION	
-		mouseEvents();	// SET THE MOUSE EVENTS
-		
+		writeLabels();	// WRITE THE LABELS IN THE RIGHT HAND HIDDEN MENU
 		sideMenu();		// SIDE MENU FUNCTIONALITY
+		mouseEvents();	// SET THE MOUSE EVENTS
+		dragPlayhead()  // ALLOWS PLAYHEAD TO BE DRAGGABLE
+		clickToTune(); 	// CLICK TO TUNE FUNCTION	
+		setPreset(); 	// SET PRESETS WHEN TAPPING THE + BUTTON	
 });
 	
 	
