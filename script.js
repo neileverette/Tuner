@@ -14,8 +14,8 @@ $(document).ready(function(e){
 		var stationsArray = ["Album of the Week","Today's Hits","'80s,'90s & Today","'00 Hits","Soft Hits","Oldies","'70s Hits" ];
 
 	
-// SIDE MENU FUNCTION
-	function sideMenu(){
+// OLD SIDE MENU FUNCTION
+/*	function sideMenu(){
 		$('.menu-hover').on({
 			'mouseleave': function(){
 				var $menu = $(".side-menu");
@@ -36,7 +36,7 @@ $(document).ready(function(e){
 								0})
 						   }
 		});
-	}	
+	} */	
 
 // WRITES THE LABLES IN THE LEFT MENU
 	function writeLabels(){
@@ -274,9 +274,22 @@ function mouseEvents(){
 function splashScreen(x){
 	$('.splashScreen').delay(x).fadeOut();
 }
+
+function sideMenu(){
+	
+	// SHOW THE MENU WHEN THE USER HOVERS OVER TO THE RIGHT OF THE WINDOW
+	$('.menu-hover').mouseenter(function(){
+		$('.side-menu').css({display: "block"});
+		});
+		
+	// HIDE THE MENU WHEN THE USER LEAVES THE SIDEBAR
+	$('.side-menu').mouseleave(function(){
+		$('.side-menu').css({display: "none"});
+		});
+}
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
-		sideMenu(); 	// CREATES THE SIDE MENU
+		//sideMenu(); 	// CREATES THE SIDE MENU
 		drawRidges(); 	// DRAW RIDGES IN THE TUNER BAR
 		writeLabels();	// WRITE THE LABELS IN THE RIGHT HAND HIDDEN MENU
 		dragPlayhead()  // ALLOWS PLAYHEAD TO BE DRAGGABLE
@@ -284,7 +297,8 @@ function splashScreen(x){
 		setPreset(); 	// SET PRESETS WHEN TAPPING THE + BUTTON
 		clickToTune(); 	// CLICK TO TUNE FUNCTION	
 		mouseEvents();	// SET THE MOUSE EVENTS
-		splashScreen(3000); // LOAD THE SPLASH SCREEN
+		splashScreen(500); // LOAD THE SPLASH SCREEN
+		sideMenu();		// SIDE MENU FUNCTIONALITY
 });
 	
 	

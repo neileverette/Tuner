@@ -63,7 +63,8 @@ body,html{
 
 .side-menu {
 	padding-top:100px;
-	position:relative;
+	position:absolute;
+	display:none;
 	background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.9))); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* Chrome10+,Safari5.1+ */
@@ -71,22 +72,17 @@ body,html{
 	background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* IE10+ */
 	background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#e6000000',GradientType=1 ); /* IE6-9 */
-    display: block;
-    width: 300px;
-    left: 300px;
+    width: 20%;
+    left:80%;
     height: 100%;
 }
 
 .menu-hover{
-	border:1px red solid;
-	position:relative;
-	float:right;
-	display: block;
-	overflow: hidden;
-	width: 300px;
+	display:block;
+	position:absolute;
+	left:95%;
+	width: 5%;
 	height: 100%;
-	top: 0px;
-	left: 0px;
 }
 
 .fullscreen{
@@ -334,14 +330,26 @@ p{
 }
 
 .loading{
-	border:1px #FFFFFF solid;
-	display:inline-block;
-	position:absolute;
+	border: 1px rgba(255, 255, 255, 0.4) solid;
+	display: inline-block;
+	position: absolute;
 	width: 60%;
 	margin-left: 20%;
-	margin-right:20%;
-	height:20px;
-	top:65%;
+	margin-right: 20%;
+	height: 20px;
+	top: 65%;
+}
+
+.loadingFill{
+	border: 1px rgba(255, 255, 255, 0.4) solid;
+	display: inline-block;
+	position: absolute;
+	width: 30%;
+	margin-left: 20%;
+	margin-right: 20%;
+	height: 20px;
+	top: 65%;
+	background-color: rgba(255, 255, 255, 0.4);
 }
 
 #pause,#skip,#like,#dislike,#add{
