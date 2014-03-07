@@ -11,7 +11,7 @@ $(document).ready(function(e){
 		var artistArray = [ "Various Artists ", "Alicia Keys", "Plndr", "Burning Spear","Throne and Lion", "Bruno Mars","Tyler the Creator","Amerigo Gazaway", "Iron Maiden", "Aaliyah", "Shane Ward", "The Lumineers", "Imagine Dragons", "Sesame Street", "Modest Mouse", "Lady Gaga", "Cheif Keef", "Angry Somoans", "Justin Bieber", "Lil Wayne", "Reonda", "Kayne West", "Burning Spear", "DJ Holiday", "Dangerous", "Thompson Square", "Filter", "Madonna", "Miley Cirus", "Various Artists ", "Alicia Keys", "Plndr", "Burning Spear","Throne and Lion", "Bruno Mars","Tyler the Creator","Amerigo Gazaway", "Iron Maiden", "Aaliyah", "Shane Ward", "The Lumineers", "Imagine Dragons", "Sesame Street", "Modest Mouse", "Lady Gaga", "Cheif Keef", "Angry Somoans", "Justin Bieber", "Lil Wayne", "Reonda", "Kayne West", "Burning Spear", "DJ Holiday", "Dangerous", "Thompson Square", "Filter", "Madonna", "Miley Cirus", "Various Artists ", "Alicia Keys", "Plndr", "Burning Spear","Throne and Lion", "Bruno Mars","Tyler the Creator","Amerigo Gazaway", "Iron Maiden", "Aaliyah", "Shane Ward", "The Lumineers", "Imagine Dragons", "Sesame Street", "Modest Mouse", "Lady Gaga", "Cheif Keef", "Angry Somoans", "Justin Bieber", "Lil Wayne", "Reonda", "Kayne West", "Burning Spear", "DJ Holiday", "Dangerous", "Thompson Square", "Filter", "Madonna", "Miley Cirus", "Various Artists ", "Alicia Keys", "Plndr", "Burning Spear","Throne and Lion", "Bruno Mars","Tyler the Creator","Amerigo Gazaway", "Iron Maiden", "Aaliyah", "Shane Ward", "The Lumineers", "Imagine Dragons", "Sesame Street", "Modest Mouse", "Lady Gaga", "Cheif Keef", "Angry Somoans", "Justin Bieber", "Lil Wayne", "Reonda", "Kayne West", "Burning Spear", "DJ Holiday", "Dangerous", "Thompson Square", "Filter", "Madonna", "Miley Cirus"];
 
 	//// STATIONS
-		var stationsArray = ["Album of the Week","Today's Hits","'80s,'90s & Today","'00 Hits","Soft Hits","Oldies","'70s Hits" ];
+		var stationsArray = ["01 Album of the Week","02 Today's Hits","03 '80s,'90s & Today","04 '00 Hits","05 Soft Hits","06 Oldies","07 '70s Hits", "08 Love Songs", "09 Party Hits", "10 Classic Hits", "11 Pop Workout", "12 Pop Remix", "13 Easy Listening", "14 Easy Listening" ];
 
 
 // FAKE SPLASH SCREEN
@@ -51,7 +51,6 @@ $(document).ready(function(e){
 		
 		// Loop that adds individual items to the menu
 		for ( var i = 0; i < menuArray.length; i++ ) {
-		   // $('.side-menu').append("<p class = \"menutext\">" +labelArray[i] + "</p>");
 		   $('.side-menu').append("<p class = \"menutext\">"+menuArray[i] +"</p>");
 		}
 	}
@@ -138,9 +137,6 @@ $(document).ready(function(e){
 					
 						// Changes the background image depending on the playhead position
 						if (xPos == position){
-							//$('.background').css("background-image", "url(images/image"+i+".jpg)");
-							//$('.songName').text(titleArray[i]);
-							//$('.artistName').text(artistArray[i]);
 							changeArtist(); 	// CHANGE THE ARTIST
 							changeStation(); 	// CHANGE THE STATION
 							changeTitle(); 		// CHANGE THE SONG
@@ -172,34 +168,6 @@ $(document).ready(function(e){
 		});		
 }
 
-// SET PRESETS WHEN TAPPING THE + BUTTON
-	function setPreset(){
-	
-	var presetButton = $('#add'); // GRAB THE ADD BUTTON
-	
-	var i = 0; // START A COUNTER FOR UNIQUE PRESET LOCATIONS
-	
-	//CAPTURE THE X POSITION OF THE CLICK WITHIN THE TUNER REGION
-	presetButton.click(function(){
-		
-		//VARIABLES FOR THE FUNCTION
-		var playhead = $('.playheadgraphic'); 							// GRAB THE PLAYHEAD ELEMENT
-		var leftMargin = parseInt($('.stationInfo').css("left"));		// GET THE LEFT MARGIN OF THE DIV ELEMENT
-		var needlePosition = (playhead.offset().left) - leftMargin;					// GET THE LEFT CURRENT POSITION OF THE PLAYHEAD
-	
-		i++; // increment the counter
-		
-		//APPEND THE PRESET AFTER THE TUNER DIV
-		$('.tuner').append("<div id = \"preset"+i+"\" class=\"preset\"></div>");	// ADD THE PRESET MARK ON THE TUNER HEAD
-		
-		//SET THE X POSITION OF THE PRESET
-		$( ".preset:last" ).css("left", needlePosition);				//SET THE LOCATION OF THE PRESET MARK		
-		
-		moveToast(needlePosition);  		// CHANGE LOCATION OF TOAST
-		showToast(i); 	// DISPLAY TOAST AFTER PRESET
-		
-	});
-}
 
 // LOAD A RANDOM ARTIST
 	function changeArtist(){
@@ -270,6 +238,62 @@ $(document).ready(function(e){
 	$('.toast').css("margin-left", offset);	
 }
 
+// SET PRESETS WHEN TAPPING THE + BUTTON
+	function setPreset(){
+	
+	var presetButton = $('#add'); // GRAB THE ADD BUTTON
+	
+	var i = 0; // START A COUNTER FOR UNIQUE PRESET LOCATIONS
+	
+	//CAPTURE THE X POSITION OF THE CLICK WITHIN THE TUNER REGION
+	presetButton.click(function(){
+		
+		//VARIABLES FOR THE FUNCTION
+		var playhead = $('.playheadgraphic'); 							// GRAB THE PLAYHEAD ELEMENT
+		var leftMargin = parseInt($('.stationInfo').css("left"));		// GET THE LEFT MARGIN OF THE DIV ELEMENT
+		var needlePosition = (playhead.offset().left) - leftMargin;					// GET THE LEFT CURRENT POSITION OF THE PLAYHEAD
+	
+		i++; // increment the counter
+		
+		//APPEND THE PRESET AFTER THE TUNER DIV
+		$('.tuner').append("<div id = \"preset"+i+"\" class=\"preset\"></div>");	// ADD THE PRESET MARK ON THE TUNER HEAD
+		
+		//SET THE X POSITION OF THE PRESET
+		$( ".preset:last" ).css("left", needlePosition);				//SET THE LOCATION OF THE PRESET MARK		
+		
+		moveToast(needlePosition);  		// CHANGE LOCATION OF TOAST
+		showToast(i); 	// DISPLAY TOAST AFTER PRESET
+		
+	});
+}
+
+// POPULATE THE CHANNEL PICKER
+	function channelPicker(){
+
+		// Loop that adds individual items to the menu
+		for ( var i = 0; i < stationsArray.length; i++ ) {
+		   $('.channelPicker').append("<p class = \"channels\">"+ stationsArray[i] +"</p>"); //labelArray[i] 
+		}
+	}
+	
+// EVENTS ON THE CHANNEL PICKER
+	function channelPickerFunctions(){
+		var stationName = $('.stationName');
+		
+		
+		stationName.mousedown(function(){
+			$('.channelPicker').fadeIn("fast");
+		});
+			
+		$('.overlay').mousedown(function(){
+			$('.channelPicker').fadeOut("fast");
+		});
+		
+		$('.channelPicker').mousedown(function(){
+			$('.channelPicker').fadeOut("fast");
+		});
+	}
+
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
 		splashScreen(3000); // LOAD THE SPLASH SCREEN
@@ -281,7 +305,9 @@ $(document).ready(function(e){
 		mouseEvents();	// SET THE MOUSE EVENTS
 		dragPlayhead()  // ALLOWS PLAYHEAD TO BE DRAGGABLE
 		clickToTune(); 	// CLICK TO TUNE FUNCTION	
-		setPreset(); 	// SET PRESETS WHEN TAPPING THE + BUTTON	
+		setPreset(); 	// SET PRESETS WHEN TAPPING THE + BUTTON
+		channelPicker();	// CREATES THE CHANNEL POP UP
+		channelPickerFunctions(); //MOUSE EVENTS ON THE CHANNEL PICKER
 });
 	
 	
