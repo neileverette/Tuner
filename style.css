@@ -20,6 +20,11 @@ p{
 	color: #FFF;
 }
 
+.arrow{
+	margin-left:10px;
+	height:15px;
+	}
+
 .artistName{
 	font-size: 20px;
 	letter-spacing: .05em;
@@ -306,6 +311,10 @@ p{
 	text-transform: capitalize;
 }
 
+.station{
+	display:inline-block;
+	}
+
 .stationInfo,.songName,.artistName,.menutext,.firstMenuText,.stationlabels,.siteTitle{
 	font-family: "Helvetica Neue", Roboto;
 	font-weight: 100;
@@ -316,6 +325,7 @@ p{
 	font-size:30px;
 	letter-spacing: .05em;
 	text-transform: capitalize;
+	display:inline-block;
 }
 
 .stationInfo,.buttonContainer{

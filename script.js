@@ -287,10 +287,9 @@ $(document).ready(function(e){
 	
 // EVENTS ON THE CHANNEL PICKER
 	function channelPickerFunctions(){
-		var stationName = $('.stationName');
 		
 		// FADE THE PICKER IN
-		stationName.mousedown(function(){
+		$('.station').mousedown(function(){
 			$('.channelPicker').fadeIn("fast");
 		});
 		
@@ -320,16 +319,13 @@ $(document).ready(function(e){
 			// CHANGE THE ARTIST TO A RANDOM ARTIST
 			changeArtist();
 			
-			// CHANGE THE CHANNEL NAME
-			//changeStation();
-			
 			// MOVE THE NEEDLE			
 			moveNeedle(getRandomInt(44,950));
 		});
 	}
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
-		splashScreen(2000); // LOAD THE SPLASH SCREEN
+		splashScreen(100); // LOAD THE SPLASH SCREEN
 		loadingGraphic(); 	// DRAWS THE FAKE PROGRESS BAR
 		drawRidges(); 		// DRAW RIDGES IN THE TUNER BAR
 		writeStations() // WRITE STATION LABELS UNDER TUNER BAR
