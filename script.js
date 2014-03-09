@@ -281,7 +281,6 @@ $(document).ready(function(e){
 	};	
 
 // Returns a random integer between min and max
-// Using Math.round() will give you a non-uniform distribution!
 	function getRandomInt(min, max) {
   		return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -290,15 +289,28 @@ $(document).ready(function(e){
 	function channelPickerFunctions(){
 		var stationName = $('.stationName');
 		
-		
+		// FADE THE PICKER IN
 		stationName.mousedown(function(){
 			$('.channelPicker').fadeIn("fast");
 		});
-			
+		
+		// FADE THE STATION PICKER OUT	
 		$('.overlay').mousedown(function(){
 			$('.channelPicker').fadeOut("fast");
 		});
 		
+		// STATION PICKER SELECT FUNCTION
+		$('.channels').click(function(){
+			
+			// GET THE VALUE OF THE SELECTED STATION
+			var channel = $(this).text();
+			
+			// SET THE VALUE OF THE STATION
+			$('.stationName').text(channel);
+
+		});
+		
+		// ACTIONS THAT HAPPEN ONCE A CHANNEL HAS BEEN SELECTED
 		$('.channelPicker').mousedown(function(){
 			$('.channelPicker').fadeOut("fast");
 			
@@ -309,17 +321,15 @@ $(document).ready(function(e){
 			changeArtist();
 			
 			// CHANGE THE CHANNEL NAME
-			changeStation();
+			//changeStation();
 			
 			// MOVE THE NEEDLE			
 			moveNeedle(getRandomInt(44,950));
-			
 		});
-
 	}
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
-		splashScreen(0); // LOAD THE SPLASH SCREEN
+		splashScreen(2000); // LOAD THE SPLASH SCREEN
 		loadingGraphic(); 	// DRAWS THE FAKE PROGRESS BAR
 		drawRidges(); 		// DRAW RIDGES IN THE TUNER BAR
 		writeStations() // WRITE STATION LABELS UNDER TUNER BAR
