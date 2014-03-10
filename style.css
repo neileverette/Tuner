@@ -20,10 +20,19 @@ p{
 	color: #FFF;
 }
 
-.arrow{
+.arrow,.arrowHover{
 	margin-left:10px;
-	height:15px;
+	height:10px;
+}
+
+.arrow{
+	-webkit-filter: blur(5px);
 	}
+	
+.arrowHover{
+	-webkit-filter: blur(5px);
+	}	
+	
 
 .artistName{
 	font-size: 20px;
@@ -100,7 +109,7 @@ p{
 	letter-spacing: .02em;
 	margin-left: 20px;
 	line-height: 50px;
-	font-size: 20px;
+	font-size: 17px;
 }
 
 .channelPicker{
@@ -182,7 +191,7 @@ p{
 }
 
 .playhead,.playheadgraphic{
-	height:34px;
+	height:27px;
 }
 
 .playhead{
@@ -197,17 +206,28 @@ p{
 .playheadgraphic{
 	width:4px;
 	margin-left:18px;
-	background-color:#Fff; /*#F00*/
+	background-color:#F00; /*#F00*/
 }
 
-.preset{
-	top:144px;
+/* OLD PRESET GRAPHIC*/
+/*.preset{
+	top:140px;
 	position:absolute;
 	width:1px;
-	height:15px;
+	height:5px;
 	left:100px;
 	background-color: rgba(0, 0, 0, 0.4);
 	box-shadow: 1px 0px 0px rgba(255, 255, 255, 0.4);
+}*/
+
+.preset{
+	top: 145px;
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	border-radius: 25px;
+	left: 100px;
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
 .rainbow{
@@ -313,19 +333,14 @@ p{
 
 .station{
 	display:inline-block;
+	/*border:1px solid red;*/
+	height:35;
 	}
 
 .stationInfo,.songName,.artistName,.menutext,.firstMenuText,.stationlabels,.siteTitle{
 	font-family: "Helvetica Neue", Roboto;
 	font-weight: 100;
 	color: #FFF;
-}
-
-.stationName{
-	font-size:30px;
-	letter-spacing: .05em;
-	text-transform: capitalize;
-	display:inline-block;
 }
 
 .stationInfo,.buttonContainer{
@@ -349,6 +364,34 @@ p{
 	letter-spacing: .1em;
 	text-transform: uppercase;
 }
+
+.stationName,.stationNameHover{
+	font-size:25px;
+}
+
+.stationName{
+	letter-spacing: .05em;
+	text-transform: capitalize;
+	display:inline-block;
+}
+
+.stationNameHover{
+	letter-spacing: .05em;
+	text-transform: capitalize;
+	display: inline-block;
+	color: #C68517;
+}
+
+.test{
+	width:35px;
+	height: 100%;
+	display: inline-block;
+	margin:0px;
+	margin-left: 10px;
+	background-image: url(images/arrow.png);
+	background-size:cover;
+}
+
 .title{
 	display:block;
 	position:absolute;
@@ -365,9 +408,17 @@ p{
 	opacity:.6;
 }
 
-/* RAINBOW TUNER AREA*/
 .tuner{
-	margin-top:20px;
+	margin-top: 20px;
+	width: 100%;
+	height: 25px;
+	width: 100%;
+	overflow: hidden;
+	border-top: 1px solid rgba(255,255,255,.4);
+}
+
+.tunerStrip{
+	margin-top:2px;
 	background: rgb(255,50,50); /* Old browsers */
 	background: -moz-linear-gradient(left,  rgba(255,50,50,1) 0%, rgba(242,252,50,1) 14%, rgba(61,255,50,1) 28%, rgba(49,249,243,1) 43%, rgba(49,53,249,1) 61%, rgba(252,50,252,1) 83%, rgba(252,0,4,1) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,50,50,1)), color-stop(14%,rgba(242,252,50,1)), color-stop(28%,rgba(61,255,50,1)), color-stop(43%,rgba(49,249,243,1)), color-stop(61%,rgba(49,53,249,1)), color-stop(83%,rgba(252,50,252,1)), color-stop(100%,rgba(252,0,4,1))); /* Chrome,Safari4+ */
@@ -377,8 +428,8 @@ p{
 	background: linear-gradient(to right,  rgba(255,50,50,1) 0%,rgba(242,252,50,1) 14%,rgba(61,255,50,1) 28%,rgba(49,249,243,1) 43%,rgba(49,53,249,1) 61%,rgba(252,50,252,1) 83%,rgba(252,0,4,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3232', endColorstr='#fc0004',GradientType=1 ); /* IE6-9 */
 	width:100%;
-	height:25px;
-	overflow:hidden;
+	height:4px;
+	width: 100%;
 }
 
 #pause,#skip,#like,#dislike,#add{

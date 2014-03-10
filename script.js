@@ -11,7 +11,7 @@ $(document).ready(function(e){
 		var artistArray = [ "Various Artists ", "Alicia Keys", "Plndr", "Burning Spear","Throne and Lion", "Bruno Mars","Tyler the Creator","Amerigo Gazaway", "Iron Maiden", "Aaliyah", "Shane Ward", "The Lumineers", "Imagine Dragons", "Sesame Street", "Modest Mouse", "Lady Gaga", "Cheif Keef", "Angry Somoans", "Justin Bieber", "Lil Wayne", "Reonda", "Kayne West", "Burning Spear", "DJ Holiday", "Dangerous", "Thompson Square", "Filter", "Madonna", "Miley Cirus", "Various Artists ", "Alicia Keys", "Plndr", "Burning Spear","Throne and Lion", "Bruno Mars","Tyler the Creator","Amerigo Gazaway", "Iron Maiden", "Aaliyah", "Shane Ward", "The Lumineers", "Imagine Dragons", "Sesame Street", "Modest Mouse", "Lady Gaga", "Cheif Keef", "Angry Somoans", "Justin Bieber", "Lil Wayne", "Reonda", "Kayne West", "Burning Spear", "DJ Holiday", "Dangerous", "Thompson Square", "Filter", "Madonna", "Miley Cirus", "Various Artists ", "Alicia Keys", "Plndr", "Burning Spear","Throne and Lion", "Bruno Mars","Tyler the Creator","Amerigo Gazaway", "Iron Maiden", "Aaliyah", "Shane Ward", "The Lumineers", "Imagine Dragons", "Sesame Street", "Modest Mouse", "Lady Gaga", "Cheif Keef", "Angry Somoans", "Justin Bieber", "Lil Wayne", "Reonda", "Kayne West", "Burning Spear", "DJ Holiday", "Dangerous", "Thompson Square", "Filter", "Madonna", "Miley Cirus", "Various Artists ", "Alicia Keys", "Plndr", "Burning Spear","Throne and Lion", "Bruno Mars","Tyler the Creator","Amerigo Gazaway", "Iron Maiden", "Aaliyah", "Shane Ward", "The Lumineers", "Imagine Dragons", "Sesame Street", "Modest Mouse", "Lady Gaga", "Cheif Keef", "Angry Somoans", "Justin Bieber", "Lil Wayne", "Reonda", "Kayne West", "Burning Spear", "DJ Holiday", "Dangerous", "Thompson Square", "Filter", "Madonna", "Miley Cirus"];
 
 	//// STATIONS
-		var stationsArray = ["01 Album of the Week","02 Today's Hits","03 '80s,'90s & Today","04 '00 Hits","05 Soft Hits","06 Oldies","07 '70s Hits", "08 Love Songs", "09 Party Hits", "10 Classic Hits", "11 Pop Workout", "12 Pop Remix", "13 Easy Listening", "14 Easy Listening" ];
+		var stationsArray = ["01 Album of the Week","02 Today's Hits","03 '80s,'90s & Today","04 '00 Hits","05 Soft Hits","06 Oldies","07 '70s Hits", "08 Love Songs", "09 Party Hits", "10 Classic Hits", "11 Pop Workout", "12 Pop Remix", "13 Easy Listening", "14 Contemporary Jazz", "15 Hard Rock" ];
 
 
 // FAKE SPLASH SCREEN
@@ -228,7 +228,6 @@ $(document).ready(function(e){
 
 // SET LOCATION OF TOAST
 	function moveToast(x){
-	console.log(x);
 	
 	// SET VARIABLE TO CENTER THE LABEL ON THE PLAYHEAD
 	var offset = x - $('.toast').width()/2; 
@@ -320,9 +319,28 @@ $(document).ready(function(e){
 			changeArtist();
 			
 			// MOVE THE NEEDLE			
-			moveNeedle(getRandomInt(44,950));
+			moveNeedle(getRandomInt(44,900));
 		});
 	}
+	
+	
+// HOVER STATE OF THE STATION PICKER
+	function stationHover(){
+		// GRAB THE FULL DIV TAG CONTAINING THE STRING AND DROP DOWN IMAGE
+		var stationPicker = $('.station');
+		
+		// THE STATION NAME
+		var stationName = $('.stationName');
+		
+		stationPicker.mouseenter(function(){
+			stationName.toggleClass('stationName stationNameHover');
+			$('.arrow').toggleClass('arrow arrowHover');
+		});
+		
+		stationPicker.mouseleave(function(){
+			stationName.toggleClass('stationName stationNameHover');
+		});
+	};
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
 		splashScreen(100); // LOAD THE SPLASH SCREEN
@@ -337,6 +355,7 @@ $(document).ready(function(e){
 		setPreset(); 	// SET PRESETS WHEN TAPPING THE + BUTTON
 		channelPicker();	// CREATES THE CHANNEL POP UP
 		channelPickerFunctions(); //MOUSE EVENTS ON THE CHANNEL PICKER
+		stationHover(); 	// HOVER STATE ON THE STATION DROPDOWN
 });
 	
 	
