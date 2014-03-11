@@ -158,7 +158,7 @@ $(document).ready(function(e){
 		
 		
 		// FUNCTION TO CHANGE THE PLAYHEAD BASED ON THE CLICK STATE IN THE TUNER GRAPHIC
-		tuner.click(function(e){
+		tuner.mousedown(function(e){
 			var needlePosition = e.pageX-leftMargin-playhead.width()/2;
 			moveNeedle(needlePosition); // AFTER THE TUNER HAS BEEN CLICKED, MOVE THE PLAYHEAD GRAPHIC 
 			changeArtist(); 	// CHANGE THE ARTIST
@@ -343,7 +343,7 @@ $(document).ready(function(e){
 	};
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
-		splashScreen(100); // LOAD THE SPLASH SCREEN
+		splashScreen(3000); // LOAD THE SPLASH SCREEN
 		loadingGraphic(); 	// DRAWS THE FAKE PROGRESS BAR
 		drawRidges(); 		// DRAW RIDGES IN THE TUNER BAR
 		writeStations() // WRITE STATION LABELS UNDER TUNER BAR
