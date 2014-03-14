@@ -26,11 +26,12 @@ p{
 }
 
 .arrow{
-	-webkit-filter: blur(5px);
 	}
 	
 .arrowHover{
-	-webkit-filter: blur(5px);
+	-webkit-filter: blur(20px);
+	filter: blur(20px);
+	/*-webkit-filter: blur(5px);*/
 	}	
 	
 
@@ -55,7 +56,6 @@ p{
 	/*filter: blur(10px);
 	-webkit-filter: blur(5px);
 	-moz-filter: blur(5px);
-	-o-filter: blur(5px);
 	-ms-filter: blur(5px);*/
 }
 

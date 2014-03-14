@@ -15,7 +15,7 @@ $(document).ready(function(e){
 
 
 // FAKE SPLASH SCREEN
-	function splashScreen(x){
+	function launchsplashScreen(x){
 	$('.splashScreen').delay(x).fadeOut();
 }	
 
@@ -331,19 +331,21 @@ $(document).ready(function(e){
 		
 		// THE STATION NAME
 		var stationName = $('.stationName');
+		var arrow = $('.arrow');
 		
 		stationPicker.mouseenter(function(){
 			stationName.toggleClass('stationName stationNameHover');
-			$('.arrow').toggleClass('arrow arrowHover');
+			arrow.toggleClass('arrow arrowHover');
 		});
 		
 		stationPicker.mouseleave(function(){
 			stationName.toggleClass('stationName stationNameHover');
+			arrow.toggleClass('arrow arrowHover');
 		});
 	};
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
-		splashScreen(3000); // LOAD THE SPLASH SCREEN
+		launchsplashScreen(3000); // LOAD THE SPLASH SCREEN
 		loadingGraphic(); 	// DRAWS THE FAKE PROGRESS BAR
 		drawRidges(); 		// DRAW RIDGES IN THE TUNER BAR
 		writeStations() // WRITE STATION LABELS UNDER TUNER BAR
