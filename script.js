@@ -16,12 +16,20 @@ $(document).ready(function(e){
 
 // FAKE SPLASH SCREEN
 	function launchsplashScreen(x){
-	$('.splashScreen').delay(x).fadeOut();
-}	
+		$('.splashScreen').delay(x).fadeOut();
+		turnOnGradient(x);  	// AFTER THE LAUNCH SCREEN LOADS, LOAD THE GRADIENT
+}
+
+// TURN ON GRADIENT
+	function turnOnGradient(x){
+		setTimeout(function() { 
+    		$('.overlay').css('display','inline'); // TURNS THE GRADIENT ON AFTER X SECONDS
+		}, x);	
+	}
 
 // FAKE LOADING GRAPHIC
 	function loadingGraphic(){
-	$('.loadingFill').delay(800).toggle('slide', {direction: 'left'}, 900);
+		$('.loadingFill').delay(800).toggle('slide', {direction: 'left'}, 900); // FAKE PROGRESS BAR
 }
 
 // DRAWS THE RIDGES
@@ -249,7 +257,7 @@ $(document).ready(function(e){
 		//VARIABLES FOR THE FUNCTION
 		var playhead = $('.playheadgraphic'); 							// GRAB THE PLAYHEAD ELEMENT
 		var leftMargin = parseInt($('.stationInfo').css("left"));		// GET THE LEFT MARGIN OF THE DIV ELEMENT
-		var needlePosition = (playhead.offset().left) - leftMargin;					// GET THE LEFT CURRENT POSITION OF THE PLAYHEAD
+		var needlePosition = (playhead.offset().left) - leftMargin;		// GET THE LEFT CURRENT POSITION OF THE PLAYHEAD
 	
 		i++; // increment the counter
 		
@@ -343,6 +351,8 @@ $(document).ready(function(e){
 			arrow.toggleClass('arrow arrowHover');
 		});
 	};
+	
+
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
 		launchsplashScreen(3000); // LOAD THE SPLASH SCREEN

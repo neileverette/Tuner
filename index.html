@@ -8,7 +8,7 @@
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 	<script src="script.js"></script>
     
-<title>Slider Experiment</title>
+<title>Music Radio</title>
 </head>
 
 <body>
@@ -23,19 +23,22 @@
     
     <!--SET THE STATION AREA WITH ARTIST NAME AND TUNER GRAPHIC-->
 	<div class="stationInfo">
+    
+    	<!-- DROP DOWN MENU FOR THE STATIONS -->
     	<div class="station">
         	<p class="stationName">12 Today's Top Music</p>
             <img class="arrow" src="images/arrow">
         </div>
-
+		
+        <!-- ARTIST AND SONG INFORMATION -->
         <p class="songName">Girl On Fire</p>
         <p class="artistName">Alicia Keys</p> 
+        
+        <!-- TUNER STRIP -->
         <div class="tuner"></div>
-        <div class="tunerStrip"></div>
-        <div class="playhead"><div class="playheadgraphic"></div>
+        	<div class="tunerStrip"></div>
+        	<div class="playhead"><div class="playheadgraphic"></div>
         </div>
-       
-       <!-- <div class="rainbow"></div>-->
         <div class="labels"></div>
         <p class="toast">Preset Added</p>      
     </div>
@@ -49,12 +52,12 @@
         <div class="button" id="add"></div>
     </div>
     
-    
+    <!-- SEARCH BOX AT TOP OF SCREEN-->
     <div class="title">
     	<p class="siteTitle">Search Artist or Genre</p>
     </div>
     
-    
+    <!-- SPLASH SCREEN-->
     <div class="splashScreen">
         <div class = "splash"></div>
         <div class="overlay"></div>
@@ -62,10 +65,9 @@
         <p class="splashSubTitle">Loading</p>
         <div class="loading"><div class="loadingFill"></div></div> 
    </div>
-
+	
+    <!-- DROP DOWN MENU FOR THE STATIONS -->
 	<div class="channelPicker"></div>
-    
-
      
 </body>
 </html>
