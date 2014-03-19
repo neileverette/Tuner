@@ -331,34 +331,25 @@ $(document).ready(function(e){
 		});
 	}
 	
-	
-// HOVER STATE OF THE STATION PICKER
+
+// HOVER STATE OF STATION PICKER
 	function stationHover(){
-		// GRAB THE FULL DIV TAG CONTAINING THE STRING AND DROP DOWN IMAGE
-		var stationPicker = $('.station');
 		
-		// THE STATION NAME
-		var stationName = $('.stationName');
-		var arrow = $('.arrow');
-		
-		stationPicker.mouseenter(function(){
-			stationName.toggleClass('stationName stationNameHover');
-			arrow.toggleClass('arrow arrowHover');
-		});
-		
-		stationPicker.mouseleave(function(){
-			stationName.toggleClass('stationName stationNameHover');
-			arrow.toggleClass('arrow arrowHover');
-		});
+		$('.station').hover(changeStationClass,changeStationClass);
 	};
-	
+
+// STATION HOVER FUNCTION
+	function changeStationClass(evt){
+		$('.stationName').toggleClass('stationNameHover');
+		$('.arrow').toggleClass('arrowHover');
+	};
 
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
-		launchsplashScreen(3000); // LOAD THE SPLASH SCREEN
-		loadingGraphic(); 	// DRAWS THE FAKE PROGRESS BAR
-		drawRidges(); 		// DRAW RIDGES IN THE TUNER BAR
-		writeStations() // WRITE STATION LABELS UNDER TUNER BAR
+		launchsplashScreen(100);  // LOAD THE SPLASH SCREEN
+		loadingGraphic();     // DRAWS THE FAKE PROGRESS BAR
+		drawRidges(); 		  // DRAW RIDGES IN THE TUNER BAR
+		writeStations()       // WRITE STATION LABELS UNDER TUNER BAR
 		writeLabels();	// WRITE THE LABELS IN THE RIGHT HAND HIDDEN MENU
 		sideMenu();		// SIDE MENU FUNCTIONALITY
 		mouseEvents();	// SET THE MOUSE EVENTS

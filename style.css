@@ -23,6 +23,7 @@ p{
 .arrow,.arrowHover{
 	margin-left:10px;
 	height:10px;
+	opacity:1;
 }
 
 .arrow{
@@ -30,10 +31,11 @@ p{
 	
 /* NOTE - I WAS TRYING TO FINALIZE A COLOR FILTER ON THE DOWN ARROW GRAPHIC WHEN THE USER HOVERS, BUT DIDN'T GET TO FINISH IT*/	
 .arrowHover{
-	-webkit-filter: blur(20px);
-	filter: blur(20px);
-	/*-webkit-filter: blur(5px);*/
+	-webkit-filter: hue-rotate(2deg);
+	-webkit-filter: blur(1px);
 	}	
+
+	
 	
 .artistName{
 	font-size: 20px;
