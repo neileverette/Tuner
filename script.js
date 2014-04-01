@@ -78,22 +78,11 @@ $(document).ready(function(e){
 
 // SET MOUSE EVENT ON ADD BUTTON
 	function mouseEvents(){
-		
-	$('.button:last').mouseenter(function() {
-		$(this).addClass("buttonHover");
-		});
-			
-	$('.button:last').mouseleave(function() {
-		$(this).removeClass("buttonHover");
-		});	
-		
-	$('.button:last').mousedown(function() {
-    	$(this).addClass("buttonPress");
-		});	
-		
-	$('.button:last').mouseup(function() {
-		$(this).removeClass("buttonPress");
-		});	
+        
+        
+     $('#add').hover(function(){
+                $('#add').toggleClass('buttonHover');
+        });
 }
 	
 // ALLOWS PLAYHEAD TO BE DRAGGABLE
@@ -213,7 +202,8 @@ $(document).ready(function(e){
 	var i = Math.floor((Math.random()*90)+1); 
 	
 	// SET ARTIST TEXT WITH THE RANDOM VALUE
-	$('.background').css("background-image", "url(images/image"+i+".jpg)");	
+	$('.background').css("background-image", "url(images/image"+i+".jpg)");
+
 }
 
 // MOVE NEEDLE POSITION
@@ -359,9 +349,4 @@ $(document).ready(function(e){
 		channelPicker();	// CREATES THE CHANNEL POP UP
 		channelPickerFunctions(); //MOUSE EVENTS ON THE CHANNEL PICKER
 		stationHover(); 	// HOVER STATE ON THE STATION DROPDOWN
-});
-	
-	
- 
- 
-	
+});	
