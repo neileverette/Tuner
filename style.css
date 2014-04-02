@@ -1,11 +1,10 @@
 *{
-	letter-spacing: .1em;
 }
 
 body,html{
   	height: 100%;
   	margin:0px;
-  	font-family: "Helvetica Neue", Roboto;
+  	font-family:"Roboto";
 	font-weight: 100;
 	color: #FFF;
 }
@@ -38,7 +37,7 @@ p{
 	
 	
 .artistName{
-	font-size: 20px;
+	font-size: 24px;
 	letter-spacing: .05em;
 	text-transform: capitalize;
 }
@@ -124,6 +123,13 @@ p{
 	left:50px;
 	}
 
+.fineTune{
+	position:relative;
+	left:30px;
+	top:50px;
+	}
+
+
 /* CONTAINER DIV FOR ALL THE CONTENT*/
 .fullscreen{
 	width:100%;
@@ -170,7 +176,7 @@ p{
 	letter-spacing: .02em;
 	margin-left: 70px;
 	line-height: 50px;
-	font-size: 25px;
+	font-size: 18px;
 }
 
 .overlay{
@@ -180,11 +186,16 @@ p{
 	top:0;
 	height: 100%;
 	width:100%;
-	background-size:cover;
-	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.12) 57%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(57%,rgba(0,0,0,0.12)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.12) 57%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
-}
+	
+	background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+	}
 
 .playhead,.playheadgraphic{
 	height:30px;
@@ -193,7 +204,7 @@ p{
 .playhead{
 	/*border: 1px solid red;*/
 	position:absolute;
-	top:134px;
+	top:130px;
 	width:40px;
 	left:100px;
 }
@@ -243,7 +254,7 @@ p{
 }
 
 .side-menu {
-	padding-top:100px;
+	padding-top:40px;
 	position:absolute;
 	display:none;
 	background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%); /* FF3.6+ */
@@ -287,7 +298,6 @@ p{
 	font-size: 70px;
 	font-weight: 100;
 	text-align: center;
-	letter-spacing: .01em;
 	color:rgba(255, 255, 255, 0.9);
 }
 
@@ -299,7 +309,6 @@ p{
 	font-size: 20px;
 	font-weight: 100;
 	text-align: center;
-	letter-spacing: .1em;
 	text-transform: uppercase;
 	color:rgba(255, 255, 255, 0.6);
 }
@@ -313,21 +322,16 @@ p{
 }
 
 .songName{
-	letter-spacing: 0em;
-	font-size:50px;
+	font-size:40px;
 	text-transform: capitalize;
 }
 
 .station{
 	display:inline-block;
-	/*border:1px solid red;*/
 	height:35;
 	}
 
 .stationInfo,.songName,.artistName,.menutext,.firstMenuText,.stationlabels,.siteTitle{
-	font-family: "Helvetica Neue", Roboto;
-	font-weight: 100;
-	color: #FFF;
 }
 
 .stationInfo,.buttonContainer{
@@ -348,25 +352,20 @@ p{
 	float:left;
 	padding-right:32px;
 	font-size: 10px;
-	letter-spacing: .1em;
 	text-transform: uppercase;
 }
 
 .stationName,.stationNameHover{
-	font-size:25px;
-}
-
-.stationName{
-	letter-spacing: .05em;
+	font-size:18px;
 	text-transform: capitalize;
 	display:inline-block;
 }
 
+.stationName{
+}
+
 .stationNameHover{
-	letter-spacing: .05em;
-	text-transform: capitalize;
-	display: inline-block;
-	color: #C68517;
+	
 }
 
 .test{
@@ -420,28 +419,37 @@ p{
 	width: 100%;
 }
 
-#pause,#skip,#like,#dislike,#add{
+#pause,#skip,#like,#dislike,#add,#more{
 	background-position: center center;
-	background-size:35%;
 	background-repeat:no-repeat;
 }
 
 #pause{
 	background-image: url(images/pause.png);
+	background-size:40%;
 }
 
 #skip{
 	background-image: url(images/skip.png);
+	background-size:35%;
 }
 
 #like{
 	background-image: url(images/like.png);
+	background-size:45%;
 }
 
 #dislike{
 	background-image: url(images/dislike.png);
+	background-size:45%;
 }
 
 #add{
 	background-image: url(images/add.png);
+	background-size:45%;
+}
+
+#more{
+	background-image: url(images/options.png);
+	background-size:45%;
 }

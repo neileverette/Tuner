@@ -61,6 +61,7 @@ $(document).ready(function(e){
 		for ( var i = 0; i < menuArray.length; i++ ) {
 		   $('.side-menu').append("<p class = \"menutext\">"+menuArray[i] +"</p>");
 		}
+		$('.side-menu').append("<img src=\"images/fine_tune.png\" class=\"fineTune\" width=\"218\" height=\"253\">");
 	}
 
 // CREATES THE SIDE MENU 
@@ -325,13 +326,9 @@ $(document).ready(function(e){
 // HOVER STATE OF STATION PICKER
 	function stationHover(){
 		
-		$('.station').hover(changeStationClass,changeStationClass);
-	};
-
-// STATION HOVER FUNCTION
-	function changeStationClass(evt){
-		$('.stationName').toggleClass('stationNameHover');
-		$('.arrow').toggleClass('arrowHover');
+		$('.station').hover(function(){
+			$('.stationName').toggleClass('stationNameHover');
+			})
 	};
 
 		
