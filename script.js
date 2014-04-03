@@ -357,5 +357,5 @@ $(document).ready(function(e){
 		channelPickerFunctions(); //MOUSE EVENTS ON THE CHANNEL PICKER
 		stationHover(); 	// HOVER STATE ON THE STATION DROPDOWN
 		//dragContent(); 	// ALLOWS THE CONTENT AREA TO BE DRAGGED
-		tempMessage("GitHub is working");
+		tempMessage("Another test message");
 });	
