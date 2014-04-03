@@ -351,5 +351,5 @@ $(document).ready(function(e){
 		channelPicker();	// CREATES THE CHANNEL POP UP
 		channelPickerFunctions(); //MOUSE EVENTS ON THE CHANNEL PICKER
 		stationHover(); 	// HOVER STATE ON THE STATION DROPDOWN
-		dragContent(); 	// ALLOWS THE CONTENT AREA TO BE DRAGGED
+		//dragContent(); 	// ALLOWS THE CONTENT AREA TO BE DRAGGED
 });	
