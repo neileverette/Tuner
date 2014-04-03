@@ -56,16 +56,6 @@ p{
 	background-size:cover;
 }
 
-/* CHECK TO SEE IF THIS STYLE IS STILL USED*/
-.blackBox{
-	top:53%;
-	background: rgba(0,0,0,0.3);
-	display:block;
-	position:absolute;
-	width:900px;
-	height:250px;
-	left:4%;
-}
 
 .buttonContainer,.button{
 	height: 50px;
