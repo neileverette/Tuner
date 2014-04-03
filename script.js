@@ -335,6 +335,11 @@ $(document).ready(function(e){
 	function dragContent(){
 		$('.stationInfo').draggable();
 	};
+	
+// TEST FUNCTION
+	function tempMessage(x){
+		console.log(x);
+	}
 
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
@@ -352,4 +357,5 @@ $(document).ready(function(e){
 		channelPickerFunctions(); //MOUSE EVENTS ON THE CHANNEL PICKER
 		stationHover(); 	// HOVER STATE ON THE STATION DROPDOWN
 		//dragContent(); 	// ALLOWS THE CONTENT AREA TO BE DRAGGED
+		tempMessage("GitHub is working");
 });	
