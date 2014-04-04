@@ -126,17 +126,20 @@ $(document).ready(function(e){
 		$('.volume').offset({top: volumeButtonY });	
 		
 		// SET THE CLICK BEHAVIOR ON VOLUME BUTTON
-		
 		$('#volume').click(function(){
 			$(this).css('opacity','0');
 			$('.volume').fadeIn("fast");
 		});
 		
+		
+		// CLICK TO DISMISS THE VOLUME BUTTON
 		$('.overlay').click(function(){
 			$('#volume').css('opacity','1');
 			$('.volume').fadeOut("fast");
 		});
 	
+		// DRAG THE VOLUME KNOB
+		$('.volumeKnob').draggable({ axis: "y" });
 	 	 
       	    
 }
