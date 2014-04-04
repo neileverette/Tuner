@@ -357,5 +357,5 @@ $(document).ready(function(e){
 		channelPickerFunctions(); //MOUSE EVENTS ON THE CHANNEL PICKER
 		stationHover(); 	// HOVER STATE ON THE STATION DROPDOWN
 		//dragContent(); 	// ALLOWS THE CONTENT AREA TO BE DRAGGED
-		tempMessage("Test Message");
+		tempMessage("Test 10");
 });	
