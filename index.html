@@ -14,12 +14,11 @@
 
 <body>
 
-<!--This is a comment -->
-
 	<!--FULL SCREEN DIV TO SET BACKGROUND AND SIDE MENU-->
 	<div class="fullscreen">
     	<div class="background"></div> 
  		<div class="overlay"></div>
+ 		<!--<div class="overlay2"></div>-->
     	<div class="menu-hover"></div>
         <div class="side-menu">
         	
@@ -50,29 +49,56 @@
         <div class="labels"></div>
         <p class="toast">Preset Added</p>      
     </div>
+    
+      <!-- DROP DOWN MENU FOR THE STATIONS -->
+	<div class="channelPicker">
+	</div>
+	
+	<!-- OPTIONS MENU -->
+	<div class="optionsPicker">
+		<p class="channels">Buy $0.99</p>
+		<p class="channels">Create Station from Song</p>
+		<p class="channels">Edit Station</p>
+		<p class="channels">Add Station to My Favorites</p>
+	</div>
+	
+	<!-- LIKE DIALOG -->
+	<div class="dialogLike">
+	</div>
+	
+	<!-- DISLIKE DIALOG -->
+	<div class="dialogDislike">
+	</div>	
+	
+	<!-- DISLIKE DIALOG -->
+	<div class="volume">
+		<div class="volumeSlider"></div>
+		<div class="volumeKnob"></div>
+	</div>	
 
     <!--BUTTONS FOR THE PAGE-->
+
     <div class="buttonContainer">
     	<div class="button" id="pause"></div>
         <div class="button" id="skip"></div>
         <div class="button" id="like"></div>
         <div class="button" id="dislike"></div>
         <div class="button" id="add"></div>
+        <div class="button" id="volume"></div>
         <div class="button" id="more"></div>
-
     </div>
     
     <!-- SPLASH SCREEN-->
     <div class="splashScreen">
-        <div class = "splash"></div>
-        <div class="overlay"></div>
-        <p class="splashTitle">Music Radio</p>
-        <p class="splashSubTitle">Loading</p>
-        <div class="loading"><div class="loadingFill"></div></div>
-   <img src="images/arrow.png" width="47" height="23">    </div>
-	
-    <!-- DROP DOWN MENU FOR THE STATIONS -->
-	<div class="channelPicker"></div>
+        <div class = "splash"></div>        
+        <img class="splash_logo" src="images/milk_logo.png"/>
+        <img class="slacker_logo" src="images/slacker_logo.png"/>
+
+        <div class="loading"><div class="loadingFill"></div>
+    </div>	
+        
+        
+  
      
 </body>
 </html>

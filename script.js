@@ -24,6 +24,7 @@ $(document).ready(function(e){
 	function turnOnGradient(x){
 		setTimeout(function() { 
     		$('.overlay').css('display','inline'); // TURNS THE GRADIENT ON AFTER X SECONDS
+    		//$('.overlay2').css('display','inline'); // TURNS THE GRADIENT ON AFTER X SECONDS
 		}, x);	
 	}
 
@@ -33,12 +34,12 @@ $(document).ready(function(e){
 }
 
 // DRAWS THE RIDGES
-	function drawRidges(){
-		for ( var i = 0; i < 400; i++ ) {
-			// This loop creates the ridge graphics and appends each with its own ID and places them to the ridge div
-			$('.tuner').append("<div class = \"ridge\" id = \"ridge"+ i +"\"><div class = \"ridgegraphic\"></div></div>");
-		}
-	}
+//	function drawRidges(){
+//		for ( var i = 0; i < 400; i++ ) {
+//			// This loop creates the ridge graphics and appends each with its own ID and places them to the ridge div
+//			$('.tuner').append("<div class = \"ridge\" id = \"ridge"+ i +"\"><div class = \"ridgegraphic\"></div></div>");
+//		}
+//	}
 
 // WIRTE LABELS UNDER THE TUNER BAR
 	function writeStations(){
@@ -80,11 +81,66 @@ $(document).ready(function(e){
 // SET MOUSE EVENT ON ADD BUTTON
 	function mouseEvents(){
         
+     // ADD BUTTON OPTIONS
+     $('#add, #more, #like, #dislike, #volume').hover(function(){
+     		$(this).toggleClass('buttonHover');
+        }); 
+     
+     // MORE BUTTON CLICK TO OPEN
+     $('#more').click(function(){
+			$('.optionsPicker').fadeIn("fast");
+		 });
+	
+	// CLICK TO CLOSE OUT THE OPTIONS MENU
+	$('.optionsPicker').click(function(){
+			$('.optionsPicker').fadeOut("fast");
+		 });
+		 
+	// CLICK ANYWHERE TO CLOSE THE DIALOG 
+	$('.overlay').click(function(){
+			$('.optionsPicker').fadeOut("fast");
+		 });
         
-     $('#add').hover(function(){
-                $('#add').toggleClass('buttonHover');
-        });
+	// CLICK TO LIKE
+	$('#like').click(function(){
+			$('.dialogLike').fadeIn("slow");
+			$('.dialogLike').delay(500).fadeOut("slow");
+		 });
+		 
+	// CLICK TO DISLIKE
+	$('#dislike').click(function(){
+			$('.dialogDislike').fadeIn("slow");
+			$('.dialogDislike').delay(500).fadeOut("slow");
+		 });	
+		 
+		 
+		 
+	// SET THE VOLUME SLIDER
+	
+		// FIRST GET THE XPOSITION OF THE VOLUME BUTTON
+		var volumeButtonX = $('#volume').offset().left;
+		var volumeButtonY = $('#volume').offset().top - $('.volume').height()/2 + $('#volume').height()/2;
+	
+		// SET THE SLIDER STATE XPOSITION
+		$('.volume').offset({left: volumeButtonX });
+		$('.volume').offset({top: volumeButtonY });	
+		
+		// SET THE CLICK BEHAVIOR ON VOLUME BUTTON
+		
+		$('#volume').click(function(){
+			$(this).css('opacity','0');
+			$('.volume').fadeIn("fast");
+		});
+		
+		$('.overlay').click(function(){
+			$('#volume').css('opacity','1');
+			$('.volume').fadeOut("fast");
+		});
+	
+	 	 
+      	    
 }
+
 	
 // ALLOWS PLAYHEAD TO BE DRAGGABLE
 	function dragPlayhead(){
@@ -269,7 +325,7 @@ $(document).ready(function(e){
 
 		// Loop that adds individual items to the menu
 		for ( var i = 0; i < stationsArray.length; i++ ) {
-		   $('.channelPicker').append("<p class = \"channels\">"+ stationsArray[i] +"</p>"); //labelArray[i] 
+		   $('.channelPicker').append("<p class = \"channels\">"+ stationsArray[i] +"</p>");
 		}
 	}
 	
@@ -292,7 +348,7 @@ $(document).ready(function(e){
 		});
 		
 		// FADE THE STATION PICKER OUT	
-		$('.overlay').mousedown(function(){
+		$('.overlay').click(function(){
 			$('.channelPicker').fadeOut("fast");
 		});
 		
@@ -322,6 +378,7 @@ $(document).ready(function(e){
 		});
 	}
 	
+	//
 
 // HOVER STATE OF STATION PICKER
 	function stationHover(){
@@ -330,6 +387,9 @@ $(document).ready(function(e){
 			$('.stationName').toggleClass('stationNameHover');
 			})
 	};
+	
+	
+	
 	
 // DRAG THE PAGE CONTENT
 	function dragContent(){
@@ -343,9 +403,9 @@ $(document).ready(function(e){
 
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
-		launchsplashScreen(1000);  // LOAD THE SPLASH SCREEN
+		launchsplashScreen(300);  // LOAD THE SPLASH SCREEN
 		loadingGraphic();     // DRAWS THE FAKE PROGRESS BAR
-		drawRidges(); 		  // DRAW RIDGES IN THE TUNER BAR
+		//drawRidges(); 		  // DRAW RIDGES IN THE TUNER BAR
 		writeStations()       // WRITE STATION LABELS UNDER TUNER BAR
 		writeLabels();	// WRITE THE LABELS IN THE RIGHT HAND HIDDEN MENU
 		sideMenu();		// SIDE MENU FUNCTIONALITY
@@ -357,5 +417,5 @@ $(document).ready(function(e){
 		channelPickerFunctions(); //MOUSE EVENTS ON THE CHANNEL PICKER
 		stationHover(); 	// HOVER STATE ON THE STATION DROPDOWN
 		//dragContent(); 	// ALLOWS THE CONTENT AREA TO BE DRAGGED
-		tempMessage("Test 10");
+		//tempMessage("Test 10");
 });	

@@ -66,7 +66,6 @@ p{
 }
 
 .buttonContainer{
-	opacity: .7;
 	margin-top:20px;
 	position: absolute;
 	left:610px;
@@ -80,7 +79,7 @@ p{
 	width: 40px;
 	height:40px;
 	border-radius: 50px;
-	background-color: rgba(0,0,0,0.4);
+	background-color: rgba(255,255,255,0.2);
 }
 
 .buttonHover{
@@ -120,17 +119,47 @@ p{
 	}
 
 .channelPicker{
+	position: absolute;
+	display: none;
 	border: 1px black solid;
 	box-shadow: 2px 2px 5px rgba(0,0,0,0.7);;
 	background-color: rgba(0,0,0,0.7);
-	display:inline-block;
-	display:none;
 	top:0;
 	position:absolute;
 	width:300px;
 	height:100%;
 	left:50px;
 	}
+	
+.dialogLike{
+	position: absolute;
+	top:100px;
+	position:absolute;
+	width:50%;
+	height:50%;
+	left:25%;
+	display: none;
+	background-position: center center;
+	background-repeat:no-repeat;
+	background-image: url(images/like.png);
+	background-size:10%;
+	opacity: 50%;
+}
+
+.dialogDislike{
+	position: absolute;
+	top:100px;
+	position:absolute;
+	width:50%;
+	height:50%;
+	left:25%;
+	display: none;
+	background-position: center center;
+	background-repeat:no-repeat;
+	background-image: url(images/dislike.png);
+	background-size:10%;
+	opacity: 50%;
+}
 
 .fineTune{
 	position:relative;
@@ -152,14 +181,13 @@ p{
 }
 
 .loading{
-	border: 2px rgba(255, 255, 255, 0.4) solid;
-	display: inline-block;
 	position: absolute;
+	border: 1px rgba(255, 255, 255, 0.3) solid;
 	width: 60%;
-	margin-left: 20%;
-	margin-right: 20%;
-	height: 20px;
-	top: 65%;
+	left: 20%;
+	right: 20%;
+	height: 15px;
+	top: 75%;
 	overflow:hidden;
 }
 
@@ -205,6 +233,23 @@ p{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 	}
+	
+.overlay2{
+	position:absolute;
+	display:none;
+	left:0;
+	top:0;
+	height: 100%;
+	width:100%;
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 80%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(40%,rgba(0,0,0,0)), color-stop(80%,rgba(0,0,0,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 40%,rgba(0,0,0,1) 80%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 40%,rgba(0,0,0,1) 80%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 40%,rgba(0,0,0,1) 80%,rgba(0,0,0,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 40%,rgba(0,0,0,1) 80%,rgba(0,0,0,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+	
+	}
 
 .playhead,.playheadgraphic{
 	height:30px;
@@ -236,6 +281,19 @@ p{
 	box-shadow: 1px 0px 0px rgba(255, 255, 255, 0.4);
 }
 
+
+.optionsPicker{
+	position: absolute;
+	display: none;
+	border: 1px black solid;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.7);;
+	background-color: rgba(0,0,0,0.7);
+	top:200px;
+	position:absolute;
+	width:300px;
+	height:200px;
+	left:760px;
+}
 
 .rainbow{
 	height:5px;
@@ -278,25 +336,36 @@ p{
     height: 100%;
 }
 
+.slacker_logo{
+	position: absolute;
+	width: 20%;
+	top: 85%;
+	left: 40%;
+}
+
 .splash{
 	position:absolute;
 	left:0;
 	top:0;
 	height: 100%;
 	width:100%;
-	background: #ffd232; /* Old browsers */
-	background: -moz-linear-gradient(45deg, #ffd232 0%, #ff3030 32%, #f200ff 64%, #1500ff 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#ffd232), color-stop(32%,#ff3030), color-stop(64%,#f200ff), color-stop(100%,#1500ff)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(45deg, #ffd232 0%,#ff3030 32%,#f200ff 64%,#1500ff 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(45deg, #ffd232 0%,#ff3030 32%,#f200ff 64%,#1500ff 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(45deg, #ffd232 0%,#ff3030 32%,#f200ff 64%,#1500ff 100%); /* IE10+ */
-	background: linear-gradient(45deg, #ffd232 0%,#ff3030 32%,#f200ff 64%,#1500ff 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd232', endColorstr='#1500ff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	background-attachment: fixed;
+	background-image: url(images/splash_800.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size:cover;
 }
 
 .splashScreen{
 	height:100%;
-	width:100%
+	width:100%;
+}
+
+.splash_logo{
+	position: absolute;
+	width: 16%;
+	left: 42%;
+	top: 20%;	
 }
 
 .splashTitle{
@@ -338,7 +407,7 @@ p{
 .station{
 	display:inline-block;
 	height:35;
-	}
+}
 
 .stationInfo,.songName,.artistName,.menutext,.firstMenuText,.stationlabels,.siteTitle{
 }
@@ -442,7 +511,42 @@ p{
 	width: 100%;
 }
 
-#pause,#skip,#like,#dislike,#add,#more{
+
+.volume{
+	position: absolute;
+	display: none;
+	width: 45px;
+	height:300px;
+	border-radius: 50px;
+	background-color: rgba(255,255,255,0.2);
+	
+}
+
+.volumeSlider{
+	position: relative;
+	height: 80%;
+	width: 20%;
+	top: 10%;
+	left: 40%;
+	border-radius: 50px;
+	background-color: rgba(255,255,255,0.5);
+	
+}
+
+
+.volumeKnob{
+	position: relative;
+	height: 10px;
+	width: 20%;
+	top: -20%;
+	left: 40%;
+	border-radius: 50px;
+	background-color: rgba(255,255,255,0.9);
+	
+}
+
+
+#pause,#skip,#like,#dislike,#add,#volume,#more{
 	background-position: center center;
 	background-repeat:no-repeat;
 }
@@ -472,7 +576,13 @@ p{
 	background-size:45%;
 }
 
+#volume{
+	background-image: url(images/volume.png);
+	background-size:45%;
+}
+
 #more{
 	background-image: url(images/options.png);
 	background-size:45%;
 }
+
