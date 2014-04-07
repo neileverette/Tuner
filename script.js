@@ -262,7 +262,13 @@ $(document).ready(function(e){
 	var i = Math.floor((Math.random()*90)+1); 
 	
 	// SET ARTIST TEXT WITH THE RANDOM VALUE
-	$('.background').css("background-image", "url(images/image"+i+".jpg)");
+	//$('.background').css("background-image", "url(images/image"+i+".jpg)");
+	
+	
+	
+	$('.background').css("background-image", "url(images/image"+i+".jpg)").animate({opacity:"1"},500);
+
+	//$('.background').css("background-image", "url(images/image"+i+".jpg)");
 
 }
 
@@ -351,7 +357,7 @@ $(document).ready(function(e){
 		});
 		
 		// FADE THE STATION PICKER OUT	
-		$('.overlay').click(function(){
+		$('*').click(function(){
 			$('.channelPicker').fadeOut("fast");
 		});
 		
