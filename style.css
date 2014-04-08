@@ -76,13 +76,13 @@ p{
 }
 
 .buttonHover{
-	border: 2px solid rgba(255, 255, 255, 1);
-	box-shadow: 0px 0px 5px #FFF;
+	border: 2px solid rgba(255, 255, 255, .4);
+	box-shadow: 0px 0px 5px rgba(255,255,255,.8);
 }
 
 .buttonPress{
 	border: 2px solid rgba(255, 255, 255, 1);
-	box-shadow: 0px 0px 5px #FFF;
+	box-shadow: 0px 0px 5px rgba(255,255,255,1);
 }
 
 .channels{
@@ -216,14 +216,13 @@ p{
 	top:0;
 	height: 100%;
 	width:100%;
-	
-	background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* Opera 12+ */
-	background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
-	background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.8) 74%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(1%,rgba(0,0,0,0)), color-stop(74%,rgba(0,0,0,0.8)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.8) 74%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.8) 74%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.8) 74%,rgba(0,0,0,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.8) 74%,rgba(0,0,0,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 
 	}
 	
@@ -485,8 +484,8 @@ p{
 	height: 30px;
 	width: 100%;
 	overflow: hidden;
-	border-top: 1px solid rgba(255,255,255,.2);
-	background-color: rgba(0,0,0,.4);
+	/*border-top: 1px solid rgba(255,255,255,.2);*/
+	background-color: rgba(255,255,255,.1);
 }
 
 .tunerStrip{
@@ -529,10 +528,10 @@ p{
 
 .volumeKnob{
 	position: relative;
-	height: 10px;
-	width: 20%;
+	height: 14px;
+	width: 14px;
 	top: -20%;
-	left: 40%;
+	left: 16px;
 	border-radius: 50px;
 	background-color: rgba(255,255,255,0.9);
 	

@@ -33,13 +33,6 @@ $(document).ready(function(e){
 		$('.loadingFill').delay(800).toggle('slide', {direction: 'left'}, 900); // FAKE PROGRESS BAR
 }
 
-// DRAWS THE RIDGES
-//	function drawRidges(){
-//		for ( var i = 0; i < 400; i++ ) {
-//			// This loop creates the ridge graphics and appends each with its own ID and places them to the ridge div
-//			$('.tuner').append("<div class = \"ridge\" id = \"ridge"+ i +"\"><div class = \"ridgegraphic\"></div></div>");
-//		}
-//	}
 
 // WIRTE LABELS UNDER THE TUNER BAR
 	function writeStations(){
@@ -218,10 +211,9 @@ $(document).ready(function(e){
 		tuner.mousedown(function(e){
 			var needlePosition = e.pageX-leftMargin-playhead.width()/2;
 			moveNeedle(needlePosition); // AFTER THE TUNER HAS BEEN CLICKED, MOVE THE PLAYHEAD GRAPHIC 
-			changeArtist(); 	// CHANGE THE ARTIST
-			changeStation(); 	// CHANGE THE STATION
-			changeTitle(); 		// CHANGE THE SONG
-			changeBackground()	// CHANGE THE BACKGROUND
+				       
+		   	changeChannel(); // SIMULATE CHANGING THE CHANNEL
+			
 		});		
 }
 
@@ -260,17 +252,20 @@ $(document).ready(function(e){
 		
 	// CHOOSE ONE OF THE STATIONS RANDOMLY
 	var i = Math.floor((Math.random()*90)+1); 
-	
-	// SET ARTIST TEXT WITH THE RANDOM VALUE
-	//$('.background').css("background-image", "url(images/image"+i+".jpg)");
-	
-	
-	
+		
 	$('.background').css("background-image", "url(images/image"+i+".jpg)").animate({opacity:"1"},500);
 
-	//$('.background').css("background-image", "url(images/image"+i+".jpg)");
 
 }
+
+// SET STATION TO RANDOM ID NUMBER
+	function changeStationNumber(){
+	
+		var i = Math.floor((Math.random()*30)+1);
+		
+		$('.channelNumber').text(i);
+		
+	}
 
 // MOVE NEEDLE POSITION
 	function moveNeedle(x){
@@ -357,7 +352,7 @@ $(document).ready(function(e){
 		});
 		
 		// FADE THE STATION PICKER OUT	
-		$('*').click(function(){
+		$('.overlay').click(function(){
 			$('.channelPicker').fadeOut("fast");
 		});
 		
@@ -399,7 +394,6 @@ $(document).ready(function(e){
 	
 	
 	
-	
 // DRAG THE PAGE CONTENT
 	function dragContent(){
 		$('.stationInfo').draggable();
@@ -409,10 +403,69 @@ $(document).ready(function(e){
 	function tempMessage(x){
 		console.log(x);
 	}
+	
+// LEFT AND RIGHT ARROW FUNCTIONS
+	function keyPressEvents(){
+		
+		$(document).keydown(function(e){
+		
+		// LEFT KEY EVENTS
+	    if (e.keyCode == 37) { 
+	       
+	       // GET THE CURRENT X POSITION OF PLAYHEAD
+	       var playheadX = $('.playhead').offset().left;
+	       
+	       // MOVE THE PLAYHEAD TO THE LEFT ONE CLICK
+	       $('.playhead').offset({left: playheadX-10 })	
+	       
+	       	// SIMULATE CHANGING THE CHANNEL
+		   	changeChannel();    
+		  }
+
+		
+		
+		// RIGHT KEY EVENTS
+
+	    if (e.keyCode == 39) { 
+	       
+	       // GET THE CURRENT X POSITION OF PLAYHEAD
+	       var playheadX = $('.playhead').offset().left;
+	       
+	       // MOVE THE PLAYHEAD TO THE RIGHT ONE CLICK
+	       $('.playhead').offset({left: playheadX+10 })
+
+	       
+	       // SIMULATE CHANGING THE CHANNEL
+		   	changeChannel();      
+		  }
+		
+		// UP KEY
+		
+		
+		
+		
+		});
+		
+		
+		
+		
+	}
+	
+
+	
+	
+// SIMULATES CHANGING CHANNELS	
+	function changeChannel(){
+		changeArtist(); 	// CHANGE THE ARTIST
+		changeStation(); 	// CHANGE THE STATION
+		changeTitle(); 		// CHANGE THE SONG
+		changeBackground();	// CHANGE THE BACKGROUND
+		changeStationNumber(); // CHANGE THE STATION NUMBER
+	}
 
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
-		launchsplashScreen(300);  // LOAD THE SPLASH SCREEN
+		launchsplashScreen(30);  // LOAD THE SPLASH SCREEN
 		loadingGraphic();     // DRAWS THE FAKE PROGRESS BAR
 		//drawRidges(); 		  // DRAW RIDGES IN THE TUNER BAR
 		writeStations()       // WRITE STATION LABELS UNDER TUNER BAR
@@ -425,6 +478,5 @@ $(document).ready(function(e){
 		channelPicker();	// CREATES THE CHANNEL POP UP
 		channelPickerFunctions(); //MOUSE EVENTS ON THE CHANNEL PICKER
 		stationHover(); 	// HOVER STATE ON THE STATION DROPDOWN
-		//dragContent(); 	// ALLOWS THE CONTENT AREA TO BE DRAGGED
-		//tempMessage("Test 10");
+		keyPressEvents();	// ENABLES LEFT RIGHT KEY CHANGE FOR CHANNELS
 });	
