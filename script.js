@@ -33,7 +33,6 @@ $(document).ready(function(e){
 		$('.loadingFill').delay(800).toggle('slide', {direction: 'left'}, 900); // FAKE PROGRESS BAR
 }
 
-
 // WIRTE LABELS UNDER THE TUNER BAR
 	function writeStations(){
 		
@@ -46,8 +45,7 @@ $(document).ready(function(e){
 	}
 	
 // WRITES THE LABLES IN THE LEFT MENU
-	function writeLabels(){
-		
+	function writeLabels(){	
 		//// SLIDE OUT MENU VARIABLES
 		var menuArray = [ "Create Station", "Manage Stations" , "Customize Stations", "History","Settings", "Help"];
 		
@@ -71,7 +69,7 @@ $(document).ready(function(e){
 		});
 }
 
-// SET MOUSE EVENT ON ADD BUTTON
+// SET MOUSE EVENT ON BUTTONS
 	function mouseEvents(){
         
      // ADD BUTTON OPTIONS
@@ -106,8 +104,7 @@ $(document).ready(function(e){
 			$('.dialogDislike').delay(500).fadeOut("slow");
 		 });	
 		 
-		 
-		 
+		 	 
 	// SET THE VOLUME SLIDER
 	
 		// FIRST GET THE XPOSITION OF THE VOLUME BUTTON
@@ -197,6 +194,7 @@ $(document).ready(function(e){
 			});
 	}
 
+
 // CLICK GO DIRECTLY TO ANY POINT ON THE TUNER
 	function clickToTune(){
 	
@@ -254,7 +252,6 @@ $(document).ready(function(e){
 	var i = Math.floor((Math.random()*90)+1); 
 		
 	$('.background').css("background-image", "url(images/image"+i+".jpg)").animate({opacity:"1"},500);
-
 
 }
 
@@ -381,8 +378,6 @@ $(document).ready(function(e){
 			moveNeedle(getRandomInt(44,900));
 		});
 	}
-	
-	//
 
 // HOVER STATE OF STATION PICKER
 	function stationHover(){
@@ -439,14 +434,39 @@ $(document).ready(function(e){
 		   	changeChannel();      
 		  }
 		
-		// UP KEY
+		// UP KEY EVENTS
+		if (e.keyCode == 38) {
 		
+			//FADE THE VOLUME BUTTON OUT	
+			$('#volume').css('opacity','0');
+			
+			//FADE THE SLIDER IN
+			$('.volume').fadeIn("fast");
+			
+			//MOVE VOLUME SLIDER UP
+			var volSliderY = $('.volumeKnob').offset().top; 
+			
+			$('.volumeKnob').offset({top: volSliderY-5 });
+			
+		}
 		
+		//
+		// DOWN KEY EVENTS
+		if (e.keyCode == 40) {
 		
+			//FADE THE VOLUME BUTTON OUT	
+			$('#volume').css('opacity','0');
+			
+			//FADE THE SLIDER IN
+			$('.volume').fadeIn("fast");
+			
+			//MOVE VOLUME SLIDER DOWN
+			var volSliderY = $('.volumeKnob').offset().top; 
+			
+			$('.volumeKnob').offset({top: volSliderY+5 });
+		}
 		
 		});
-		
-		
 		
 		
 	}
@@ -465,7 +485,7 @@ $(document).ready(function(e){
 
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
-		launchsplashScreen(30);  // LOAD THE SPLASH SCREEN
+		launchsplashScreen(3000);  // LOAD THE SPLASH SCREEN
 		loadingGraphic();     // DRAWS THE FAKE PROGRESS BAR
 		//drawRidges(); 		  // DRAW RIDGES IN THE TUNER BAR
 		writeStations()       // WRITE STATION LABELS UNDER TUNER BAR
