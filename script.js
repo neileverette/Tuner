@@ -485,7 +485,7 @@ $(document).ready(function(e){
 
 		
 // RUN THESE FUNCTIONS ONCE THE PAGE LOADS		
-		launchsplashScreen(3000);  // LOAD THE SPLASH SCREEN
+		launchsplashScreen(30);  // LOAD THE SPLASH SCREEN
 		loadingGraphic();     // DRAWS THE FAKE PROGRESS BAR
 		//drawRidges(); 		  // DRAW RIDGES IN THE TUNER BAR
 		writeStations()       // WRITE STATION LABELS UNDER TUNER BAR
